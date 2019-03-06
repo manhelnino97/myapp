@@ -87,8 +87,8 @@ export default class Login extends Component {
 
                         <View style={{flexDirection: 'row',marginTop:10}}>
                             <Text>Bạn có phải thành viên? </Text>
-                            <TouchableOpacity>
-                                <Text style={{color:'#1497e2'}}>ĐĂNG KÝ</Text>
+                            <TouchableOpacity onPress={()=>this.props.navigation.navigate('Register')}>
+                                <Text style={{color:'#0c7e7c'}}>ĐĂNG KÝ</Text>
                             </TouchableOpacity>
                         </View>
                     </View>

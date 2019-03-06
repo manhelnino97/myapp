@@ -95,7 +95,7 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "com.reactnativeseed"
@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-facebook-account-kit')
 
   implementation (project(':react-native-camera'))
         implementation project(':react-native-vector-icons')
@@ -144,6 +145,9 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.google.android.gms:play-services-auth-api-phone:16.0.0"
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.google.android.gms:play-services-base:16.1.0'
 
 }
 

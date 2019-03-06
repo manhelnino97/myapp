@@ -32,7 +32,7 @@ class Home extends React.Component {
                         React.createElement(View, { style: styles.container },
                             React.createElement(Image, { source: user, style: { marginStart: 10 } }),
                             React.createElement(View, { style: { flexDirection: 'column', marginStart: 15 } },
-                                React.createElement(Text, { style: { fontWeight: 'bold' } }, "Ho\u00E0ng Ti\u1EBFn M\u1EA1nh"),
+                                React.createElement(Text, { style: { fontWeight: 'bold' } }, "Ho\u00E0ng Ti\u1EBFn M\u1EA1nh 123"),
                                 React.createElement(Text, null, "144 Xu\u00E2n Th\u1EE7y, C\u1EA7u Gi\u1EA5y, H\u00E0 N\u1ED9i"),
                                 React.createElement(Text, null, "0338668369"))),
                         React.createElement(Text, { style: { marginTop: height / 7, color: '#000000', fontWeight: 'bold', fontSize: 15, marginStart: 10 } }, "\u0110\u1EB6T V\u00C9 TH\u1EAENG C\u1EA2NH"),

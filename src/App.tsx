@@ -6,6 +6,7 @@ import {Dimensions} from "react-native";
 import Home from "./container/HomeContainer";
 import BlankPage from "./container/BlankPageContainer";
 import Sidebar from "./container/SidebarContainer";
+import Register from "./container/RegisterContainer";
 import Login from "./stories/screens/Login/index";
 
 
@@ -28,9 +29,10 @@ const App = StackNavigator(
 		Login: {screen: Login},
 		BlankPage: {screen: BlankPage},
 		Drawer: {screen: Drawer},
+		Register: {screen: Register},
 	},
 	{
-		initialRouteName: "Drawer",
+		initialRouteName: "Login",
 		headerMode: "none",
 	}
 );

@@ -43,8 +43,8 @@ export default class Login extends Component {
                         React.createElement(Text, { style: { textDecorationLine: 'underline' } }, "B\u1EA1n qu\u00EAn m\u1EADt kh\u1EA9u? ")),
                     React.createElement(View, { style: { flexDirection: 'row', marginTop: 10 } },
                         React.createElement(Text, null, "B\u1EA1n c\u00F3 ph\u1EA3i th\u00E0nh vi\u00EAn? "),
-                        React.createElement(TouchableOpacity, null,
-                            React.createElement(Text, { style: { color: '#1497e2' } }, "\u0110\u0102NG K\u00DD")))))));
+                        React.createElement(TouchableOpacity, { onPress: () => this.props.navigation.navigate('Register') },
+                            React.createElement(Text, { style: { color: '#0c7e7c' } }, "\u0110\u0102NG K\u00DD")))))));
     }
 }
 Login.navigationOptions = {
