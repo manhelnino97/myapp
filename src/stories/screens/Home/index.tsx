@@ -66,7 +66,7 @@ class Home extends React.Component<Props, State> {
               <View style={styles.container}>
                 <Image source={user} style={{ marginStart: 10 }} />
                 <View style={{ flexDirection: 'column', marginStart: 15 }} >
-                  <Text style={{ fontWeight: 'bold' }} >Hoàng Tiến Mạnh</Text>
+                  <Text style={{ fontWeight: 'bold' }} >Hoàng Tiến Mạnh 123</Text>
                   <Text>144 Xuân Thủy, Cầu Giấy, Hà Nội</Text>
                   <Text>0338668369</Text>
                 </View>
