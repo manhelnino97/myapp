@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import facebook from '../../../../assets/login/facebook.png';
 import google from '../../../../assets/login/google.png';
 import email from '../../../../assets/login/email.png';
@@ -20,11 +20,11 @@ export default class Login extends Component {
                 React.createElement(View, { style: { flex: 1, justifyContent: 'center', marginBottom: 30, marginTop: 10 } },
                     React.createElement(View, { style: styles.viewEdit },
                         React.createElement(Image, { source: email }),
-                        React.createElement(TextInput, { placeholderTextColor: "#999999", placeholder: 'Email/Số điện thoại', value: this.state.userName, onChangeText: (userName) => this.setState({ userName }), style: { height: material.deviceHeight / 12.5, paddingStart: 5 } })),
+                        this.props.textInputEmail),
                     React.createElement(View, { style: styles.grayline }),
                     React.createElement(View, { style: styles.viewEdit },
                         React.createElement(Image, { source: clock }),
-                        React.createElement(TextInput, { placeholderTextColor: "#999999", placeholder: 'Mật khẩu', secureTextEntry: true, value: this.state.password, onChangeText: (password) => this.setState({ password }), style: { height: material.deviceHeight / 12.5, paddingStart: 10 } })),
+                        this.props.textInputPassword),
                     React.createElement(View, { style: styles.grayline }))),
             React.createElement(View, { style: { height: material.deviceHeight / 2 } },
                 React.createElement(View, { style: { flex: 1 } },
@@ -47,9 +47,6 @@ export default class Login extends Component {
                             React.createElement(Text, { style: { color: '#0c7e7c' } }, "\u0110\u0102NG K\u00DD")))))));
     }
 }
-Login.navigationOptions = {
-    header: null
-};
 const styles = StyleSheet.create({
     viewEdit: {
         flexDirection: 'row',

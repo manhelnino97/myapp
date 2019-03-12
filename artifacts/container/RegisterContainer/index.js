@@ -15,7 +15,7 @@ class RegisterContainer extends React.Component {
                 alert('Login cancelled');
             }
             else {
-                alert(`Logged with phone. Token: ${token}`);
+                alert('Logged with phone. Token:' + JSON.stringify(token));
             }
         });
     }
@@ -53,7 +53,6 @@ RegisterContainer.navigationOptions = {
 function bindAction(dispatch) {
     return {
         updateText: (text, title) => dispatch(updateText(text, title)),
-        showDatePicker: (status) => dispatch(showDatePicker(status)),
     };
 }
 const mapStateToProps = state => ({
@@ -62,7 +61,6 @@ const mapStateToProps = state => ({
     phoneNumber: state.registerReducer.phoneNumber,
     password: state.registerReducer.password,
     address: state.registerReducer.address,
-    isShowDatePicker: state.registerReducer.isShowDatePicker,
 });
 export default connect(mapStateToProps, bindAction)(RegisterContainer);
 const styles = StyleSheet.create({

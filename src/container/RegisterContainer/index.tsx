@@ -15,9 +15,7 @@ export interface Props {
     password: Object,
     birthday: Object,
     address: Object,
-    isShowDatePicker: Object,
     updateText: Function,
-    showDatePicker: Function,
 }
 
 class RegisterContainer extends React.Component<Props, State> {
@@ -35,7 +33,7 @@ class RegisterContainer extends React.Component<Props, State> {
                 if (!token) {
                     alert('Login cancelled')
                 } else {
-                    alert(`Logged with phone. Token: ${token}`)
+                    alert('Logged with phone. Token:' + JSON.stringify(token))
                 }
             })
     }
@@ -44,8 +42,8 @@ class RegisterContainer extends React.Component<Props, State> {
 
 
         RNAccountKit.configure({
-            responseType: 'token', // 'token' by default,
-            initialPhoneCountryPrefix: '+84'+this.props.phoneNumber, // autodetected if none is provided
+            responseType: 'token',
+            initialPhoneCountryPrefix: '+84'+this.props.phoneNumber,
             defaultCountry: 'VN',
         })
 
@@ -139,7 +137,6 @@ class RegisterContainer extends React.Component<Props, State> {
 function bindAction(dispatch) {
     return {
         updateText: (text, title) => dispatch(updateText(text, title)),
-        showDatePicker: (status) => dispatch(showDatePicker(status)),
     };
 }
 
@@ -149,7 +146,6 @@ const mapStateToProps = state => ({
     phoneNumber: state.registerReducer.phoneNumber,
     password: state.registerReducer.password,
     address: state.registerReducer.address,
-    isShowDatePicker: state.registerReducer.isShowDatePicker,
 });
 
 export default connect(mapStateToProps, bindAction)(RegisterContainer);

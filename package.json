@@ -66,6 +66,10 @@
     "react-native": "0.57.8",
     "react-native-camera": "^1.6.4",
     "react-native-facebook-account-kit": "^1.1.0",
+    "react-native-modal-datetime-picker": "^6.0.0",
+    "react-native-modal-dropdown": "^0.6.2",
+    "react-native-modalbox": "^1.7.1",
+    "react-native-paper": "^2.12.0",
     "react-navigation": "1.0.0-beta.21",
     "react-redux": "5.0.6",
     "redux": "3.7.2",
@@ -74,6 +78,7 @@
     "redux-thunk": "2.2.0",
     "remote-redux-devtools": "0.5.0",
     "remote-redux-devtools-on-debugger": "^0.8.0",
+    "rn-fetch-blob": "^0.10.15",
     "yarn": "^1.13.0"
   }
 }

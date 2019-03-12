@@ -28,7 +28,7 @@ export default class Register extends Component {
     render() {
         return (
             <ScrollView>
-                <View style={{ alignItems: 'center',height:material.deviceHeight/5  }} >
+                <View style={{ alignItems: 'center',height:material.deviceHeight/4  }} >
                     {/* <Image source={logo} style={{ marginTop: 30, marginBottom: 30 }} /> */}
                 </View>
 

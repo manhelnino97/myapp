@@ -25,7 +25,7 @@ export default class Register extends Component {
     }
     render() {
         return (React.createElement(ScrollView, null,
-            React.createElement(View, { style: { alignItems: 'center', height: material.deviceHeight / 5 } }),
+            React.createElement(View, { style: { alignItems: 'center', height: material.deviceHeight / 4 } }),
             React.createElement(View, { style: styles.viewEdit },
                 React.createElement(View, { style: { width: 20, alignItems: 'center' } },
                     React.createElement(Image, { source: user })),

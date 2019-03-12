@@ -17,9 +17,6 @@ export default class Login extends Component {
         }
     }
 
-    static navigationOptions = {
-        header: null
-    };
     
     render() {
         return (
@@ -33,24 +30,13 @@ export default class Login extends Component {
                     <View style={{ flex:1,justifyContent:'center',marginBottom:30,marginTop:10}}>
                         <View style={styles.viewEdit}>
                             <Image source={email}/>
-                            <TextInput
-                                placeholderTextColor={"#999999"}
-                                placeholder={'Email/Số điện thoại'}
-                                value={this.state.userName}
-                                onChangeText={(userName)=>this.setState({userName})}
-                                style={{height:material.deviceHeight/12.5,paddingStart:5}}/>
+                            {this.props.textInputEmail}
                         </View>
                         <View style={styles.grayline}/>
 
                         <View style={styles.viewEdit}>
                             <Image source={clock}/>
-                            <TextInput
-                                placeholderTextColor={"#999999"}
-                                placeholder={'Mật khẩu'}
-                                secureTextEntry={true}
-                                value={this.state.password}
-                                onChangeText={(password)=>this.setState({password})}
-                                style={{height:material.deviceHeight/12.5,paddingStart:10}}/>
+                            {this.props.textInputPassword}
                         </View>
                         <View style={styles.grayline}/>
                     </View>

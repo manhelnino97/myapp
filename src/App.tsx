@@ -7,7 +7,10 @@ import Home from "./container/HomeContainer";
 import BlankPage from "./container/BlankPageContainer";
 import Sidebar from "./container/SidebarContainer";
 import Register from "./container/RegisterContainer";
-import Login from "./stories/screens/Login/index";
+import Login from "./container/LoginContainer";
+import Profile from "./container/ProfileContainer";
+
+import BusTwoFloorTicket from './stories/screens/BusTwoFloorTicket/index'
 
 
 
@@ -30,9 +33,11 @@ const App = StackNavigator(
 		BlankPage: {screen: BlankPage},
 		Drawer: {screen: Drawer},
 		Register: {screen: Register},
+		Profile: {screen: Profile},
+		BusTwoFloorTicket: {screen: BusTwoFloorTicket},
 	},
 	{
-		initialRouteName: "Login",
+		initialRouteName: "Drawer",
 		headerMode: "none",
 	}
 );
