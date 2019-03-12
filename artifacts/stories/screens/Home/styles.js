@@ -3,13 +3,10 @@ const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
 const styles = StyleSheet.create({
     container: {
-        height: deviceHeight / 7,
+        height: deviceHeight / 6,
         width: deviceWidth - 40,
         backgroundColor: "#f0f0f0",
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingTop: 25,
-        paddingBottom: 25,
+        justifyContent: 'space-between',
         marginStart: 20,
         marginEnd: 20,
         borderRadius: 10,
