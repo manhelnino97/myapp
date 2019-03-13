@@ -50,9 +50,9 @@ class Home extends React.Component<Props, State> {
     const data = [
       { id: '1', name: 'cart', url: 'https://www.gotadi.com/' },
       { id: '2', name: 'train', url: 'https://vexere.com/' },
-      { id: '3', name: 'medkit', url: '' },
-      { id: '4', name: 'alarm', url: '' },
-      { id: '5', name: 'flame', url: '' },
+      { id: '3', name: 'medkit', url: 'https://www.gotadi.com/' },
+      { id: '4', name: 'alarm', url: 'https://vexere.com/' },
+      { id: '5', name: 'flame', url: 'https://www.gotadi.com/' },
     ]
 
 
@@ -64,33 +64,33 @@ class Home extends React.Component<Props, State> {
               <Image source={logo} style={{ width: width, height: height / 5 }} />
               <View style={styles.container}>
                 <View style={{ width: width - 40, height: height / 15, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <Text style={{ marginStart: 20, fontWeight: 'bold' }}>Số dư 234</Text>
+                  <Text style={{ marginStart: 20, fontWeight: 'bold' }}>Số dư</Text>
                   <Text style={{ marginEnd: 20, fontWeight: 'bold' }}>69.000 đ</Text>
                 </View>
                 <View style={{ width: width - 40, height: 1, backgroundColor: '#d6d6d6' }}/>
                 <View style={{ width: width - 40, height: height / 10 - 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={()=>this.props.navigation.navigate('BusTwoFloorTicket')}>
                     <View style={{ width: (width - 40) / 4, alignItems: 'center', justifyContent: 'center' }}>
                       <Icon name='cart' />
-                      <Text>cart</Text>
+                      <Text>Mua vé</Text>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>this.props.navigation.navigate('Profile')}>
+                    <View style={{ width: (width - 40) / 4, alignItems: 'center', justifyContent: 'center' }}>
+                      <Icon name='cart' />
+                      <Text>Profile</Text>
                     </View>
                   </TouchableOpacity>
                   <TouchableOpacity>
                     <View style={{ width: (width - 40) / 4, alignItems: 'center', justifyContent: 'center' }}>
                       <Icon name='cart' />
-                      <Text>cart</Text>
+                      <Text>cart3</Text>
                     </View>
                   </TouchableOpacity>
                   <TouchableOpacity>
                     <View style={{ width: (width - 40) / 4, alignItems: 'center', justifyContent: 'center' }}>
                       <Icon name='cart' />
-                      <Text>cart</Text>
-                    </View>
-                  </TouchableOpacity>
-                  <TouchableOpacity>
-                    <View style={{ width: (width - 40) / 4, alignItems: 'center', justifyContent: 'center' }}>
-                      <Icon name='cart' />
-                      <Text>cart</Text>
+                      <Text>cart4</Text>
                     </View>
                   </TouchableOpacity>
                 </View>

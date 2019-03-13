@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         marginStart: 50
     },
     buttonLogin: {
-        backgroundColor: '#0c7e7c',
+        backgroundColor: '#ebaa34',
         borderRadius: 30,
         width: '50%',
         height: 50,

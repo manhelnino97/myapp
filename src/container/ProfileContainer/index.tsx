@@ -95,15 +95,6 @@ class ProfileContainer extends React.Component<Props, State> {
                     this.props.updateText(text, 'email')
                 }}
                 editable={this.props.isEditUserName}
-                onEndEditing={() => {
-                    if (this.props.email === '') {
-                        alert('Vui lòng nhập địa chỉ Email')
-                    }
-                    else if (!validateEmail(this.props.email)) {
-                        alert('Địa chỉ email chưa chính xác. Vui lòng kiểm tra lại.')
-                    }
-
-                }}
             />
         );
 
@@ -117,14 +108,6 @@ class ProfileContainer extends React.Component<Props, State> {
                 keyboardType='numeric'
                 maxLength={10}
                 editable={this.props.isEditUserName}
-                onEndEditing={() => {
-                    if (this.props.phoneNumber === '') {
-                        alert('Vui lòng nhập số điện thoại')
-                    }
-                    else if (!validatePhoneNumber(this.props.phoneNumber) || this.props.phoneNumber.toString().length !== 10) {
-                        alert('Số điện thoại chưa chính xác. Vui lòng kiểm tra lại.')
-                    }
-                }}
             />
         );
 
@@ -137,15 +120,6 @@ class ProfileContainer extends React.Component<Props, State> {
                 }}
                 editable={this.props.isEditUserName}
                 secureTextEntry={true}
-                onEndEditing={() => {
-                    if (this.props.password === '') {
-                        alert('Vui lòng nhập mật khẩu')
-                    }
-                    else if (this.props.password.toString().length < 8) {
-                        alert('Mật khẩu phải lớn hơn hoặc bằng 8 kí tự')
-                    }
-
-                }}
             />
         );
 
@@ -180,14 +154,6 @@ class ProfileContainer extends React.Component<Props, State> {
                     this.props.updateText(text, 'address')
                 }}
                 editable={this.props.isEditUserName}
-                onEndEditing={() => {
-                    if (this.props.address === '') {
-                        alert('Vui lòng nhập địa chỉ nơi bạn đang sinh sống')
-                    }
-                    else if (!validateAddress(this.props.address)) {
-                        alert('Địa chỉ không chứa các kí tự đặc biệt )!@#$%^&*( ')
-                    }
-                }}
             />
         );
 

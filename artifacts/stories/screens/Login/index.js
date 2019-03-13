@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import facebook from '../../../../assets/login/facebook.png';
-import google from '../../../../assets/login/google.png';
-import email from '../../../../assets/login/email.png';
-import clock from '../../../../assets/login/clock.png';
+import facebook from '../../../../assets/Register/facebook.png';
+import google from '../../../../assets/Register/google.png';
+import email from '../../../../assets/Register/email.png';
+import clock from '../../../../assets/Register/clock.png';
 import material from '../../../theme/variables/material';
 export default class Login extends Component {
     constructor(props) {
@@ -44,7 +44,7 @@ export default class Login extends Component {
                     React.createElement(View, { style: { flexDirection: 'row', marginTop: 10 } },
                         React.createElement(Text, null, "B\u1EA1n c\u00F3 ph\u1EA3i th\u00E0nh vi\u00EAn? "),
                         React.createElement(TouchableOpacity, { onPress: () => this.props.navigation.navigate('Register') },
-                            React.createElement(Text, { style: { color: '#0c7e7c' } }, "\u0110\u0102NG K\u00DD")))))));
+                            React.createElement(Text, { style: { color: '#ebaa34' } }, "\u0110\u0102NG K\u00DD")))))));
     }
 }
 const styles = StyleSheet.create({
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         paddingLeft: 16
     },
     buttonLogin: {
-        backgroundColor: '#0c7e7c',
+        backgroundColor: '#ebaa34',
         borderRadius: 30,
         width: '50%',
         height: 50,

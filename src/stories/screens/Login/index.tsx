@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {Image, StyleSheet, Text, TouchableOpacity, View,TextInput} from 'react-native'
-import logo from '../../../../assets/logo.png'
-import facebook from '../../../../assets/login/facebook.png'
-import google from '../../../../assets/login/google.png'
-import email from '../../../../assets/login/email.png'
-import clock from '../../../../assets/login/clock.png'
+import logo from '../../../../assets/Register.png'
+import facebook from '../../../../assets/Register/facebook.png'
+import google from '../../../../assets/Register/google.png'
+import email from '../../../../assets/Register/email.png'
+import clock from '../../../../assets/Register/clock.png'
 
 import material from '../../../theme/variables/material';
 
@@ -74,7 +74,7 @@ export default class Login extends Component {
                         <View style={{flexDirection: 'row',marginTop:10}}>
                             <Text>Bạn có phải thành viên? </Text>
                             <TouchableOpacity onPress={()=>this.props.navigation.navigate('Register')}>
-                                <Text style={{color:'#0c7e7c'}}>ĐĂNG KÝ</Text>
+                                <Text style={{color:'#ebaa34'}}>ĐĂNG KÝ</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
         paddingLeft: 16
     },
     buttonLogin:{
-        backgroundColor:'#0c7e7c',
+        backgroundColor:'#ebaa34',
         borderRadius: 30,
         width:'50%',
         height:50,

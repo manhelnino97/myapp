@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import Profile from '../../stories/screens/Profile';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import { updateText, editUserName, switchStatus, showDatePicker } from './actions';
-import { validateEmail, validatePhoneNumber, validateAddress } from '../../helper/Vadilation';
 import { checkMonth } from '../../helper/Function';
 class ProfileContainer extends React.Component {
     componentDidMount() {
@@ -49,34 +48,13 @@ class ProfileContainer extends React.Component {
             }, editable: this.props.isEditUserName }));
         const textInputEmail = (React.createElement(TextInput, { style: styles.textInput, value: this.props.email, onChangeText: (text) => {
                 this.props.updateText(text, 'email');
-            }, editable: this.props.isEditUserName, onEndEditing: () => {
-                if (this.props.email === '') {
-                    alert('Vui lòng nhập địa chỉ Email');
-                }
-                else if (!validateEmail(this.props.email)) {
-                    alert('Địa chỉ email chưa chính xác. Vui lòng kiểm tra lại.');
-                }
-            } }));
+            }, editable: this.props.isEditUserName }));
         const textInputPhoneNumber = (React.createElement(TextInput, { style: styles.textInput, value: this.props.phoneNumber, onChangeText: (text) => {
                 this.props.updateText(text, 'phoneNumber');
-            }, keyboardType: 'numeric', maxLength: 10, editable: this.props.isEditUserName, onEndEditing: () => {
-                if (this.props.phoneNumber === '') {
-                    alert('Vui lòng nhập số điện thoại');
-                }
-                else if (!validatePhoneNumber(this.props.phoneNumber) || this.props.phoneNumber.toString().length !== 10) {
-                    alert('Số điện thoại chưa chính xác. Vui lòng kiểm tra lại.');
-                }
-            } }));
+            }, keyboardType: 'numeric', maxLength: 10, editable: this.props.isEditUserName }));
         const textInputPassword = (React.createElement(TextInput, { style: styles.textInput, value: this.props.password, onChangeText: (text) => {
                 this.props.updateText(text, 'password');
-            }, editable: this.props.isEditUserName, secureTextEntry: true, onEndEditing: () => {
-                if (this.props.password === '') {
-                    alert('Vui lòng nhập mật khẩu');
-                }
-                else if (this.props.password.toString().length < 8) {
-                    alert('Mật khẩu phải lớn hơn hoặc bằng 8 kí tự');
-                }
-            } }));
+            }, editable: this.props.isEditUserName, secureTextEntry: true }));
         const textInputBirthday = (React.createElement(View, null,
             React.createElement(TouchableOpacity, { onPress: () => {
                     this.props.isEditUserName ? this.props.showDatePicker(true) : '';
@@ -88,14 +66,7 @@ class ProfileContainer extends React.Component {
                 } })));
         const textInputAddress = (React.createElement(TextInput, { style: styles.textInput, value: this.props.address, onChangeText: (text) => {
                 this.props.updateText(text, 'address');
-            }, editable: this.props.isEditUserName, onEndEditing: () => {
-                if (this.props.address === '') {
-                    alert('Vui lòng nhập địa chỉ nơi bạn đang sinh sống');
-                }
-                else if (!validateAddress(this.props.address)) {
-                    alert('Địa chỉ không chứa các kí tự đặc biệt )!@#$%^&*( ');
-                }
-            } }));
+            }, editable: this.props.isEditUserName }));
         const switchSms = (React.createElement(Switch, { value: this.props.switchSms, style: { marginStart: 10 }, onValueChange: () => {
                 this.props.switchStatus(!this.props.switchSms, 'sms');
             } }));

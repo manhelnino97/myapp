@@ -24,7 +24,7 @@ export default class Profile extends React.Component {
     render() {
         return (
             <View>
-                <View style={{ height: material.deviceHeight * 0.92 - this.state.heightDialog - (Platform.OS === "ios" ? 0 : StatusBar.currentHeight)}}>
+                <View style={{ height: material.deviceHeight  - this.state.heightDialog - (Platform.OS === "ios" ? 0 : StatusBar.currentHeight)}}>
                     <ScrollView>
                         <View style={styles.viewUser}>
                             <View style={{ paddingStart: 40 }} />

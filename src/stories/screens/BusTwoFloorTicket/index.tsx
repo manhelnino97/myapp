@@ -103,21 +103,21 @@ export default class BusTwoFloorTicket extends Component {
         <Text style={{ height: 50, backgroundColor: '#d0d0d0', color: '#000000', textAlignVertical: 'center', fontSize: 16, paddingStart: 10 }}>THÔNG TIN CÁ NHÂN</Text>
 
         <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
-          <Text style={{ color: '#000000', marginStart: 10 }} >Họ và Tên :</Text>
+          <Text style={{ color: '#000000', marginStart: 20 }} >Họ và Tên :</Text>
           <TextInput style={{ height: 50 }}
           />
         </View>
         <View style={styles.grayline} />
 
         <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
-          <Text style={{ color: '#000000', marginStart: 10 }} >Email :</Text>
+          <Text style={{ color: '#000000', marginStart: 20 }} >Email :</Text>
           <TextInput style={{ height: 50 }}
           />
         </View>
         <View style={styles.grayline} />
 
         <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
-          <Text style={{ color: '#000000', marginStart: 10 }} >Số điện thoại :</Text>
+          <Text style={{ color: '#000000', marginStart: 20 }} >Số điện thoại :</Text>
           <TextInput
             style={{ height: 50 }}
             keyboardType='numeric'

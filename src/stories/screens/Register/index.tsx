@@ -74,10 +74,10 @@ export default class Register extends Component {
                 <View style={styles.grayline} />
 
                 <View style={{ flexDirection: 'row', alignItems: 'center',marginTop:10 }}>
-                    <CheckBox checked={true} color='#0c7e7c' />
+                    <CheckBox checked={true} color='#ebaa34' />
                     <View style={{ marginStart: 20, marginEnd: 5 }}>
                         <Text style={{ marginTop: 10 }} >Đăng kí tài khoản đồng nghĩa với bạn chấp nhận các
-                        <Text style={{ color: '#0c7e7c' }} onPress={() => alert('Điều khoản sử dụng')}> Điều khoản sử dụng </Text>
+                        <Text style={{ color: '#ebaa34' }} onPress={() => alert('Điều khoản sử dụng')}> Điều khoản sử dụng </Text>
                             của chúng tôi</Text>
                     </View>
                 </View>

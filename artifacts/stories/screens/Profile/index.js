@@ -14,7 +14,7 @@ export default class Profile extends React.Component {
     }
     render() {
         return (React.createElement(View, null,
-            React.createElement(View, { style: { height: material.deviceHeight * 0.92 - this.state.heightDialog - (Platform.OS === "ios" ? 0 : StatusBar.currentHeight) } },
+            React.createElement(View, { style: { height: material.deviceHeight - this.state.heightDialog - (Platform.OS === "ios" ? 0 : StatusBar.currentHeight) } },
                 React.createElement(ScrollView, null,
                     React.createElement(View, { style: styles.viewUser },
                         React.createElement(View, { style: { paddingStart: 40 } }),
