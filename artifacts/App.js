@@ -19,6 +19,7 @@ const Drawer = DrawerNavigator({
     contentComponent: (props) => React.createElement(Sidebar, Object.assign({}, props)),
 });
 const App = StackNavigator({
+    Home: { screen: Home },
     Login: { screen: Login },
     BlankPage: { screen: BlankPage },
     Drawer: { screen: Drawer },
@@ -27,7 +28,7 @@ const App = StackNavigator({
     BusTwoFloorTicket: { screen: BusTwoFloorTicket },
     WebSite: { screen: WebSite },
 }, {
-    initialRouteName: "Drawer",
+    initialRouteName: "Login",
     headerMode: "none",
 });
 export default () => (React.createElement(Root, null,

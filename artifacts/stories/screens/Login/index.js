@@ -29,7 +29,7 @@ export default class Login extends Component {
             React.createElement(View, { style: { height: material.deviceHeight / 2 } },
                 React.createElement(View, { style: { flex: 1 } },
                     React.createElement(View, { style: { flex: 1, alignItems: 'center' } },
-                        React.createElement(TouchableOpacity, { style: styles.buttonLogin, onPress: () => this.props.navigation.navigate('Drawer') },
+                        React.createElement(TouchableOpacity, { style: styles.buttonLogin, onPress: () => this.props.navigation.navigate('Home') },
                             React.createElement(Text, { style: { color: "white", fontWeight: "300" } }, "\u0110\u0102NG NH\u1EACP"))),
                     React.createElement(View, { style: { flex: 1, alignItems: 'center' } },
                         React.createElement(Text, null, "B\u1EA1n c\u00F3 th\u1EC3 \u0111\u0103ng nh\u1EADp qua c\u00E1c t\u00E0i kho\u1EA3n"),

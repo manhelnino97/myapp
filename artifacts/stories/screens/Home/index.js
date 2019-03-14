@@ -13,16 +13,14 @@ class Home extends React.Component {
                     marginTop: 10, marginBottom: 5
                 } },
                 React.createElement(TouchableOpacity, { style: { borderColor: '#d0d0d0', borderWidth: 1, width: width / 5, alignItems: 'center', backgroundColor: "#f0f0f0" }, onPress: () => {
-                        item.url !== '' ? this.props.navigation.navigate('WebSite', { url: item.url }) : '';
-                        //alert(item.url)
+                        this.props.navigation.navigate('WebSite', { url: item.url });
                     } },
                     React.createElement(Icon, { name: item.name }),
                     React.createElement(Text, null, item.name))));
         };
         this.renderItem2 = () => {
-            return (React.createElement(View, { style: { width: width * 2 / 3, height: height / 7, margin: 10 } },
-                React.createElement(TouchableOpacity, { style: {} },
-                    React.createElement(Image, { source: logo }))));
+            return (React.createElement(TouchableOpacity, { style: {} },
+                React.createElement(Image, { source: logo, style: { width: width * 2 / 3, height: height / 7, marginStart: 10 } })));
         };
     }
     render() {
@@ -61,13 +59,13 @@ class Home extends React.Component {
                                         React.createElement(Icon, { name: 'cart' }),
                                         React.createElement(Text, null, "cart4"))))),
                         React.createElement(Text, { style: { marginTop: height / 6, color: '#000000', fontWeight: 'bold', fontSize: 15, marginStart: 10 } }, "\u0110\u1EB6T V\u00C9 TH\u1EAENG C\u1EA2NH"),
-                        React.createElement(FlatList, { data: data, renderItem: (item) => this.renderItem1(item), numColumns: 4 }),
+                        React.createElement(FlatList, { data: data, renderItem: this.renderItem1, numColumns: 4 }),
                         React.createElement(Text, { style: { marginTop: 15, color: '#000000', fontWeight: 'bold', fontSize: 15, marginStart: 10 } }, "\u0110\u1EB6T V\u00C9 T\u00C0U, XE"),
-                        React.createElement(FlatList, { data: data, renderItem: (item) => this.renderItem1(item), numColumns: 4 }),
+                        React.createElement(FlatList, { data: data, renderItem: this.renderItem1, numColumns: 4 }),
                         React.createElement(Text, { style: { marginTop: 15, color: '#000000', fontWeight: 'bold', fontSize: 15, marginStart: 10 } }, "TITLE"),
-                        React.createElement(FlatList, { data: [1, 2, 3, 4], renderItem: (item) => this.renderItem2(), horizontal: true }),
+                        React.createElement(FlatList, { data: [1, 2, 3, 4], renderItem: this.renderItem2, horizontal: true }),
                         React.createElement(Text, { style: { marginTop: 15, color: '#000000', fontWeight: 'bold', fontSize: 15, marginStart: 10 } }, "TITLE"),
-                        React.createElement(FlatList, { data: [1, 2, 3, 4], renderItem: (item) => this.renderItem2(), horizontal: true }))))));
+                        React.createElement(FlatList, { data: [1, 2, 3, 4], renderItem: this.renderItem2, horizontal: true }))))));
     }
 }
 export default Home;

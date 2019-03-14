@@ -12,23 +12,11 @@ import google from '../../../../assets/Register/google.png'
 import material from '../../../theme/variables/material';
 import styles from './styles'
 export default class Register extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            userName: "",
-            email: '',
-            phoneNumber: '',
-            otpCode: '',
-            password: '',
-            birthday: '',
-            address: '',
-        }
-    }
 
     render() {
         return (
             <ScrollView>
-                <View style={{ alignItems: 'center',height:material.deviceHeight/4  }} >
+                <View style={{ alignItems: 'center', height: material.deviceHeight / 4 }} >
                     {/* <Image source={logo} style={{ marginTop: 30, marginBottom: 30 }} /> */}
                 </View>
 
@@ -53,7 +41,7 @@ export default class Register extends Component {
                         <Image source={phone} />
                     </View>
                     {this.props.textInputPhoneNumber}
-                    {this.props.otpImage }
+                    {this.props.otpImage}
                 </View>
                 <View style={styles.grayline} />
 
@@ -65,15 +53,7 @@ export default class Register extends Component {
                 </View>
                 <View style={styles.grayline} />
 
-                <View style={styles.viewEdit}>
-                    <View style={{ width: 20, alignItems: 'center' }}>
-                        <Image source={location} />
-                    </View>
-                    {this.props.textInputAddress}
-                </View>
-                <View style={styles.grayline} />
-
-                <View style={{ flexDirection: 'row', alignItems: 'center',marginTop:10 }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
                     <CheckBox checked={true} color='#ebaa34' />
                     <View style={{ marginStart: 20, marginEnd: 5 }}>
                         <Text style={{ marginTop: 10 }} >Đăng kí tài khoản đồng nghĩa với bạn chấp nhận các
@@ -82,13 +62,13 @@ export default class Register extends Component {
                     </View>
                 </View>
 
-                <View style={{ alignItems: 'center', marginTop: 30 }}>
+                <View style={{ alignItems: 'center', marginTop: 40 }}>
                     <TouchableOpacity style={styles.buttonLogin}>
                         <Text style={{ color: "white", fontWeight: "300" }}>ĐĂNG KÝ</Text>
                     </TouchableOpacity>
                 </View>
 
-                <View style={{ alignItems: 'center', marginTop: 30, paddingBottom: 20 }}>
+                <View style={{ alignItems: 'center', marginTop: 40, paddingBottom: 20 }}>
                     <Text >Bạn có thể đăng nhập qua các tài khoản</Text>
                     <View style={{ flexDirection: 'row', marginTop: 10 }} >
                         <TouchableOpacity>

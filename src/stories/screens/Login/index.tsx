@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Image, StyleSheet, Text, TouchableOpacity, View,TextInput} from 'react-native'
-import logo from '../../../../assets/Register.png'
 import facebook from '../../../../assets/Register/facebook.png'
 import google from '../../../../assets/Register/google.png'
 import email from '../../../../assets/Register/email.png'
@@ -47,7 +46,7 @@ export default class Login extends Component {
 
                         <View style={{flex:1,alignItems:'center'}}>
                             <TouchableOpacity style={styles.buttonLogin} 
-                                onPress={()=>this.props.navigation.navigate('Drawer')}
+                                onPress={()=>this.props.navigation.navigate('Home')}
                             >
                                 <Text style={{color: "white",fontWeight: "300"}}>ĐĂNG NHẬP</Text>
                             </TouchableOpacity>

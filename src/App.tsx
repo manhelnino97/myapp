@@ -28,7 +28,8 @@ const Drawer = DrawerNavigator(
 );
 
 const App = StackNavigator(
-	{
+	{	
+		Home: {screen: Home},
 		Login: {screen: Login},
 		BlankPage: {screen: BlankPage},
 		Drawer: {screen: Drawer},
@@ -38,7 +39,7 @@ const App = StackNavigator(
 		WebSite: {screen: WebSite},
 	},
 	{
-		initialRouteName: "Drawer",
+		initialRouteName: "Login",
 		headerMode: "none",
 	}
 );

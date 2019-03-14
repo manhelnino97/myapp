@@ -37,14 +37,22 @@ class RegisterContainer extends React.Component {
         const textInputPassword = (React.createElement(TextInput, { style: styles.textInput, value: this.props.password, placeholder: 'Mật khẩu', placeholderTextColor: "#999999", onChangeText: (text) => {
                 this.props.updateText(text, 'password');
             }, secureTextEntry: true }));
-        const textInputAddress = (React.createElement(TextInput, { style: styles.textInput, value: this.props.address, placeholder: 'Địa chỉ', placeholderTextColor: "#999999", onChangeText: (text) => {
-                this.props.updateText(text, 'address');
-            } }));
+        // const textInputAddress = (
+        //     <TextInput
+        //         style={styles.textInput}
+        //         value={this.props.address}
+        //         placeholder={'Địa chỉ'}
+        //         placeholderTextColor={"#999999"}
+        //         onChangeText={(text) => {
+        //             this.props.updateText(text, 'address')
+        //         }}
+        //     />
+        // );
         const otpImage = (this.props.phoneNumber.toString().length > 0 ?
             React.createElement(TouchableOpacity, { onPress: () => this.openOtpCheckScreen() },
                 React.createElement(Image, { source: otpcode, style: { marginEnd: 10 } }))
             : React.createElement(View, null));
-        return (React.createElement(Register, { textInputUserName: textInputUserName, textInputEmail: textInputEmail, textInputPhoneNumber: textInputPhoneNumber, textInputPassword: textInputPassword, textInputAddress: textInputAddress, otpImage: otpImage }));
+        return (React.createElement(Register, { textInputUserName: textInputUserName, textInputEmail: textInputEmail, textInputPhoneNumber: textInputPhoneNumber, textInputPassword: textInputPassword, otpImage: otpImage }));
     }
 }
 RegisterContainer.navigationOptions = {
