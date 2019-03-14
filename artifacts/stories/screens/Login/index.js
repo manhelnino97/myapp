@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { AccessToken, LoginManager } from 'react-native-fbsdk';
 import facebook from '../../../../assets/Register/facebook.png';
 import google from '../../../../assets/Register/google.png';
 import email from '../../../../assets/Register/email.png';
@@ -12,6 +13,27 @@ export default class Login extends Component {
             userName: '',
             password: ''
         };
+    }
+    _fbAuth() {
+        LoginManager.logInWithReadPermissions(['public_profile', 'email']).then(function (result) {
+            if (result.isCancelled) {
+                alert("Login Cancelled");
+            }
+            else {
+                //alert("Login Success permission granted:" + result.grantedPermissions);
+                AccessToken.getCurrentAccessToken().then((data) => {
+                    //console.log(data.accessToken.toString())
+                    fetch('https://graph.facebook.com/v2.5/me?fields=email,name,picture.width(300).height(300)&access_token=' + data.accessToken.toString())
+                        .then((response) => response.json())
+                        .then((json) => { alert(JSON.stringify(json)); })
+                        .catch(() => {
+                        alert('ERROR GETTING DATA FROM FACEBOOK');
+                    });
+                });
+            }
+        }, function (error) {
+            alert(error + "");
+        });
     }
     render() {
         return (React.createElement(View, { style: {} },
@@ -34,7 +56,7 @@ export default class Login extends Component {
                     React.createElement(View, { style: { flex: 1, alignItems: 'center' } },
                         React.createElement(Text, null, "B\u1EA1n c\u00F3 th\u1EC3 \u0111\u0103ng nh\u1EADp qua c\u00E1c t\u00E0i kho\u1EA3n"),
                         React.createElement(View, { style: { flexDirection: 'row', marginTop: 10 } },
-                            React.createElement(TouchableOpacity, null,
+                            React.createElement(TouchableOpacity, { onPress: () => this._fbAuth() },
                                 React.createElement(Image, { source: facebook, style: { marginEnd: 10 } })),
                             React.createElement(TouchableOpacity, null,
                                 React.createElement(Image, { source: google }))))),
