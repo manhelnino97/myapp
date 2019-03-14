@@ -11,7 +11,7 @@ import Login from "./container/LoginContainer";
 import Profile from "./container/ProfileContainer";
 
 import BusTwoFloorTicket from './stories/screens/BusTwoFloorTicket/index'
-
+import WebSite from './stories/screens/WebSite/index'
 
 
 const deviceWidth = Dimensions.get("window").width;
@@ -28,16 +28,18 @@ const Drawer = DrawerNavigator(
 );
 
 const App = StackNavigator(
-	{
+	{	
+		Home: {screen: Home},
 		Login: {screen: Login},
 		BlankPage: {screen: BlankPage},
 		Drawer: {screen: Drawer},
 		Register: {screen: Register},
 		Profile: {screen: Profile},
 		BusTwoFloorTicket: {screen: BusTwoFloorTicket},
+		WebSite: {screen: WebSite},
 	},
 	{
-		initialRouteName: "Drawer",
+		initialRouteName: "Login",
 		headerMode: "none",
 	}
 );

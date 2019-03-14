@@ -1,31 +1,32 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import Home from "../../stories/screens/Home";
-import datas from "./data";
-import { fetchList } from "./actions";
+import {  } from "./actions";
 export interface Props {
-	navigation: any;
-	fetchList: Function;
-	data: Object;
+	navigation: any,
+	isLoading: Object,
 }
 export interface State {}
 class HomeContainer extends React.Component<Props, State> {
+	
 	componentDidMount() {
-		this.props.fetchList(datas);
+		
 	}
 	render() {
-		return <Home navigation={this.props.navigation} list={this.props.data} />;
+		return <Home 
+		navigation={this.props.navigation}
+		isLoading={this.props.isLoading}
+		/>;
 	}
 }
 
 function bindAction(dispatch) {
 	return {
-		fetchList: url => dispatch(fetchList(url)),
+		
 	};
 }
 
 const mapStateToProps = state => ({
-	data: state.homeReducer.list,
 	isLoading: state.homeReducer.isLoading,
 });
 export default connect(mapStateToProps, bindAction)(HomeContainer);

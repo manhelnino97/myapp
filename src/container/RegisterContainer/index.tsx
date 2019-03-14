@@ -40,18 +40,16 @@ class RegisterContainer extends React.Component<Props, State> {
 
     render() {
 
-
         RNAccountKit.configure({
             responseType: 'token',
-            initialPhoneCountryPrefix: '+84'+this.props.phoneNumber,
+            initialPhoneCountryPrefix: '+84' + this.props.phoneNumber,
             defaultCountry: 'VN',
         })
-
 
         const textInputUserName = (
             <TextInput
                 style={styles.textInput}
-                value={this.props.userName}
+                value={this.props.userName.toString()}
                 placeholder={'Họ & tên'}
                 placeholderTextColor={"#999999"}
                 onChangeText={(text) => {
@@ -64,7 +62,7 @@ class RegisterContainer extends React.Component<Props, State> {
         const textInputEmail = (
             <TextInput
                 style={styles.textInput}
-                value={this.props.email}
+                value={this.props.email.toString()}
                 placeholder={'Email'}
                 placeholderTextColor={"#999999"}
                 onChangeText={(text) => {
@@ -76,7 +74,7 @@ class RegisterContainer extends React.Component<Props, State> {
         const textInputPhoneNumber = (
             <TextInput
                 style={styles.textInput}
-                value={this.props.phoneNumber}
+                value={this.props.phoneNumber.toString()}
                 placeholder={'Số điện thoại'}
                 placeholderTextColor={"#999999"}
                 onChangeText={(text) => {
@@ -90,7 +88,7 @@ class RegisterContainer extends React.Component<Props, State> {
         const textInputPassword = (
             <TextInput
                 style={styles.textInput}
-                value={this.props.password}
+                value={this.props.password.toString()}
                 placeholder={'Mật khẩu'}
                 placeholderTextColor={"#999999"}
                 onChangeText={(text) => {
@@ -100,18 +98,17 @@ class RegisterContainer extends React.Component<Props, State> {
             />
         );
 
-
-        const textInputAddress = (
-            <TextInput
-                style={styles.textInput}
-                value={this.props.address}
-                placeholder={'Địa chỉ'}
-                placeholderTextColor={"#999999"}
-                onChangeText={(text) => {
-                    this.props.updateText(text, 'address')
-                }}
-            />
-        );
+        // const textInputAddress = (
+        //     <TextInput
+        //         style={styles.textInput}
+        //         value={this.props.address}
+        //         placeholder={'Địa chỉ'}
+        //         placeholderTextColor={"#999999"}
+        //         onChangeText={(text) => {
+        //             this.props.updateText(text, 'address')
+        //         }}
+        //     />
+        // );
 
         const otpImage = (
             this.props.phoneNumber.toString().length > 0 ?
@@ -127,7 +124,6 @@ class RegisterContainer extends React.Component<Props, State> {
                 textInputEmail={textInputEmail}
                 textInputPhoneNumber={textInputPhoneNumber}
                 textInputPassword={textInputPassword}
-                textInputAddress={textInputAddress}
                 otpImage={otpImage}
             />
         )
