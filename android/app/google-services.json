@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1097334176517",
+    "firebase_url": "https://vietticket-cc008.firebaseio.com",
+    "project_id": "vietticket-cc008",
+    "storage_bucket": "vietticket-cc008.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097334176517:android:29cc44319e3548e6",
+        "android_client_info": {
+          "package_name": "com.reactnativeseed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097334176517-oj72jbgpr8dkb2q708e8hb3v7gil7hv9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reactnativeseed",
+            "certificate_hash": "c6c0be0e4b2b1a21e770a2830eed6cd86a38edd6"
+          }
+        },
+        {
+          "client_id": "1097334176517-pf27fq1u386ujtvnp1lm4iq096ij0pps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-MtqerYxJQOl0k2zu_yUmesJwwtdFJTk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097334176517-pf27fq1u386ujtvnp1lm4iq096ij0pps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

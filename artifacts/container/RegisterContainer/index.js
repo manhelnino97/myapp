@@ -25,16 +25,16 @@ class RegisterContainer extends React.Component {
             initialPhoneCountryPrefix: '+84' + this.props.phoneNumber,
             defaultCountry: 'VN',
         });
-        const textInputUserName = (React.createElement(TextInput, { style: styles.textInput, value: this.props.userName, placeholder: 'Họ & tên', placeholderTextColor: "#999999", onChangeText: (text) => {
+        const textInputUserName = (React.createElement(TextInput, { style: styles.textInput, value: this.props.userName.toString(), placeholder: 'Họ & tên', placeholderTextColor: "#999999", onChangeText: (text) => {
                 this.props.updateText(text, 'userName');
             } }));
-        const textInputEmail = (React.createElement(TextInput, { style: styles.textInput, value: this.props.email, placeholder: 'Email', placeholderTextColor: "#999999", onChangeText: (text) => {
+        const textInputEmail = (React.createElement(TextInput, { style: styles.textInput, value: this.props.email.toString(), placeholder: 'Email', placeholderTextColor: "#999999", onChangeText: (text) => {
                 this.props.updateText(text, 'email');
             } }));
-        const textInputPhoneNumber = (React.createElement(TextInput, { style: styles.textInput, value: this.props.phoneNumber, placeholder: 'Số điện thoại', placeholderTextColor: "#999999", onChangeText: (text) => {
+        const textInputPhoneNumber = (React.createElement(TextInput, { style: styles.textInput, value: this.props.phoneNumber.toString(), placeholder: 'Số điện thoại', placeholderTextColor: "#999999", onChangeText: (text) => {
                 this.props.updateText(text, 'phoneNumber');
             }, keyboardType: 'numeric', maxLength: 10 }));
-        const textInputPassword = (React.createElement(TextInput, { style: styles.textInput, value: this.props.password, placeholder: 'Mật khẩu', placeholderTextColor: "#999999", onChangeText: (text) => {
+        const textInputPassword = (React.createElement(TextInput, { style: styles.textInput, value: this.props.password.toString(), placeholder: 'Mật khẩu', placeholderTextColor: "#999999", onChangeText: (text) => {
                 this.props.updateText(text, 'password');
             }, secureTextEntry: true }));
         // const textInputAddress = (

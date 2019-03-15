@@ -57,13 +57,13 @@ class Home extends React.Component<Props, State> {
           <ScrollView>
             <View style={{ paddingBottom: 10 }}>
               <Image source={logo} style={{ width: width, height: height / 5 }} />
-              
+
               <View style={styles.container}>
                 <View style={{ width: width - 40, height: height / 15, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <Text style={{ marginStart: 20, fontWeight: 'bold' }}>Số dư</Text>
-                  <Text style={{ marginEnd: 20, fontWeight: 'bold' }}>69.000 đ</Text>
+                  <Text style={{ marginStart: 20, fontWeight: 'bold', color: '#ebaa34' }}>Số dư</Text>
+                  <Text style={{ marginEnd: 20, fontWeight: 'bold', color: '#ebaa34' }}>69.000 đ</Text>
                 </View>
-                <View style={{ width: width - 40, height: 1, backgroundColor: '#d6d6d6' }} />
+                <View style={{ width: width - 60, height: 1, backgroundColor: '#e0e0e0', marginStart: 10, marginEnd: 10 }} />
                 <View style={{ width: width - 40, height: height / 10 - 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                   <TouchableOpacity onPress={() => this.props.navigation.navigate('BusTwoFloorTicket')}>
                     <View style={{ width: (width - 40) / 4, alignItems: 'center', justifyContent: 'center' }}>

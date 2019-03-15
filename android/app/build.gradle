@@ -148,6 +148,8 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-google-signin')
+    implementation project(':react-native-fbsdk')
     implementation project(':react-native-facebook-account-kit')
 
   implementation (project(':react-native-camera'))
@@ -159,6 +161,7 @@ dependencies {
     implementation "com.google.android.gms:play-services-auth-api-phone:16.0.0"
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
     implementation 'com.google.android.gms:play-services-base:16.1.0'
+    implementation 'com.facebook.android:facebook-android-sdk:4.34.0'
 
 }
 

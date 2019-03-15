@@ -22,7 +22,7 @@ class LoginContainer extends Component<Props, State> {
 		const textInputEmail = (
 			<TextInput
 				style={styles.textInput}
-				value={this.props.email}
+				value={this.props.email.toString()}
 				placeholder={'Email'}
 				placeholderTextColor={"#999999"}
 				onChangeText={(text) => {
@@ -34,7 +34,7 @@ class LoginContainer extends Component<Props, State> {
 		const textInputPassword = (
 			<TextInput
 				style={styles.textInput}
-				value={this.props.password}
+				value={this.props.password.toString()}
 				placeholder={'Mật khẩu'}
 				placeholderTextColor={"#999999"}
 				onChangeText={(text) => {

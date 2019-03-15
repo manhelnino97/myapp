@@ -5,10 +5,10 @@ import { TextInput, StyleSheet } from 'react-native';
 import { updateText } from './action';
 class LoginContainer extends Component {
     render() {
-        const textInputEmail = (React.createElement(TextInput, { style: styles.textInput, value: this.props.email, placeholder: 'Email', placeholderTextColor: "#999999", onChangeText: (text) => {
+        const textInputEmail = (React.createElement(TextInput, { style: styles.textInput, value: this.props.email.toString(), placeholder: 'Email', placeholderTextColor: "#999999", onChangeText: (text) => {
                 this.props.updateText(text, 'email');
             } }));
-        const textInputPassword = (React.createElement(TextInput, { style: styles.textInput, value: this.props.password, placeholder: 'Mật khẩu', placeholderTextColor: "#999999", onChangeText: (text) => {
+        const textInputPassword = (React.createElement(TextInput, { style: styles.textInput, value: this.props.password.toString(), placeholder: 'Mật khẩu', placeholderTextColor: "#999999", onChangeText: (text) => {
                 this.props.updateText(text, 'password');
             }, secureTextEntry: true }));
         return React.createElement(Login, { navigation: this.props.navigation, textInputEmail: textInputEmail, textInputPassword: textInputPassword });

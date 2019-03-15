@@ -24,7 +24,7 @@ export default class BusTwoFloorTicket extends Component {
 
   renderItem() {
     return (
-      <Image source={logo} style={{ width: deviceWidth, height: deviceHeight / 4 }} />
+      <Image source={logo} style={{ width: deviceWidth, height: deviceHeight / 4}} />
     )
   }
 
