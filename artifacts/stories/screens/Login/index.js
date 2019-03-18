@@ -1,6 +1,15 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { AccessToken, LoginManager } from 'react-native-fbsdk';
+import { GoogleSignin, statusCodes } from 'react-native-google-signin';
 import facebook from '../../../../assets/Register/facebook.png';
 import google from '../../../../assets/Register/google.png';
 import email from '../../../../assets/Register/email.png';
@@ -35,6 +44,31 @@ export default class Login extends Component {
             alert(error + "");
         });
     }
+    signIn() {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                yield GoogleSignin.hasPlayServices().catch(e => alert(e));
+                const userInfo = yield GoogleSignin.signIn().catch(e => alert('error: ' + e));
+                ;
+                //alert(JSON.stringify(userInfo))
+            }
+            catch (error) {
+                if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+                    // user cancelled the login flow
+                }
+                else if (error.code === statusCodes.IN_PROGRESS) {
+                    // operation (f.e. sign in) is in progress already
+                }
+                else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+                    // play services not available or outdated
+                }
+                else {
+                    // some other error happened
+                }
+            }
+        });
+    }
+    ;
     render() {
         return (React.createElement(View, { style: {} },
             React.createElement(View, { style: { height: material.deviceHeight / 2 } },
@@ -58,7 +92,7 @@ export default class Login extends Component {
                         React.createElement(View, { style: { flexDirection: 'row', marginTop: 10 } },
                             React.createElement(TouchableOpacity, { onPress: () => this._fbAuth() },
                                 React.createElement(Image, { source: facebook, style: { marginEnd: 10 } })),
-                            React.createElement(TouchableOpacity, null,
+                            React.createElement(TouchableOpacity, { onPress: () => this.signIn() },
                                 React.createElement(Image, { source: google }))))),
                 React.createElement(View, { style: { flex: 1, justifyContent: 'center', alignItems: 'center' } },
                     React.createElement(TouchableOpacity, null,

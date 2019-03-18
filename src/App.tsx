@@ -39,7 +39,7 @@ const App = StackNavigator(
 		WebSite: {screen: WebSite},
 	},
 	{
-		initialRouteName: "Login",
+		initialRouteName: "Home",
 		headerMode: "none",
 	}
 );

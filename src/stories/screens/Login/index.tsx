@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native'
 import { AccessToken, LoginManager } from 'react-native-fbsdk';
+import { GoogleSignin, statusCodes } from 'react-native-google-signin';
 import facebook from '../../../../assets/Register/facebook.png'
 import google from '../../../../assets/Register/google.png'
 import email from '../../../../assets/Register/email.png'
@@ -18,7 +19,7 @@ export default class Login extends Component {
     }
 
     _fbAuth() {
-        LoginManager.logInWithReadPermissions(['public_profile','email']).then(function (result) {
+        LoginManager.logInWithReadPermissions(['public_profile', 'email']).then(function (result) {
             if (result.isCancelled) {
                 alert("Login Cancelled");
             } else {
@@ -39,6 +40,24 @@ export default class Login extends Component {
             alert(error + "");
         })
     }
+
+    async signIn(){
+        try {
+            await GoogleSignin.hasPlayServices().catch(e=>alert(e));
+            const userInfo = await GoogleSignin.signIn().catch(e=>alert('error: '+e));;
+            //alert(JSON.stringify(userInfo))
+        } catch (error) {
+            if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+                // user cancelled the login flow
+            } else if (error.code === statusCodes.IN_PROGRESS) {
+                // operation (f.e. sign in) is in progress already
+            } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+                // play services not available or outdated
+            } else {
+                // some other error happened
+            }
+        }
+    };
 
 
     render() {
@@ -79,10 +98,10 @@ export default class Login extends Component {
                         <View style={{ flex: 1, alignItems: 'center' }}>
                             <Text >Bạn có thể đăng nhập qua các tài khoản</Text>
                             <View style={{ flexDirection: 'row', marginTop: 10 }} >
-                                <TouchableOpacity onPress={()=> this._fbAuth()}>
+                                <TouchableOpacity onPress={() => this._fbAuth()}>
                                     <Image source={facebook} style={{ marginEnd: 10 }} />
                                 </TouchableOpacity>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.signIn()}>
                                     <Image source={google} />
                                 </TouchableOpacity>
                             </View>
