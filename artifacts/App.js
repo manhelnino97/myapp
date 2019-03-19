@@ -28,7 +28,7 @@ const App = StackNavigator({
     BusTwoFloorTicket: { screen: BusTwoFloorTicket },
     WebSite: { screen: WebSite },
 }, {
-    initialRouteName: "Home",
+    initialRouteName: "Login",
     headerMode: "none",
 });
 export default () => (React.createElement(Root, null,

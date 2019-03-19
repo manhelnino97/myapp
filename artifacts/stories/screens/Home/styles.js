@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     container: {
         height: deviceHeight / 6,
         width: deviceWidth - 40,
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "#f8f8f8",
         justifyContent: 'space-between',
         marginStart: 20,
         marginEnd: 20,
