@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, FlatList, Dimensions, TouchableOpacity, ScrollView, Image,Text } from 'react-native';
+import { View, FlatList, Dimensions, TouchableOpacity, ScrollView, Image, Text } from 'react-native';
 import styles from "./styles";
 import logo from '../../../../assets/logo.png'
 import pay from '../../../../assets/home/pay.png'
@@ -27,7 +27,7 @@ class Home extends React.Component<Props, State> {
       <TouchableOpacity
         style={{ width: width / 4, alignItems: 'center', marginTop: 10 }}
         onPress={() => {
-          item.type === 'navigation' ? this.props.navigation.navigate(item.url) : this.props.navigation.navigate('WebSite', { url: item.url })
+          item.type === 'navigation' ? this.props.navigation.navigate(item.url) : this.props.navigation.navigate('WebSite', { url: item.url})
         }}>
         <Image source={item.icon} style={{ width: height / 20, height: height / 20 }} />
         <Text style={{ fontSize: 13, color: '#ebaa34', marginTop: 5, textAlign: 'center', padding: 5 }}>{item.name}</Text>
@@ -64,7 +64,7 @@ class Home extends React.Component<Props, State> {
           <View style={{ paddingBottom: 10 }}>
             <Image source={logo} style={{ width: width, height: height / 5 }} />
 
-            <View style={styles.container}>
+            <View style={styles.box}>
               <View style={{ width: width - 40, height: height / 15, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Text style={{ marginStart: 20, marginEnd: 5, fontWeight: 'bold', color: '#ebaa34' }}>Số dư</Text>
                 <Text style={{ marginEnd: 20, fontWeight: 'bold', color: '#ebaa34' }}>69.000 đ</Text>
@@ -80,7 +80,7 @@ class Home extends React.Component<Props, State> {
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
                   <View style={{ width: (width - 40) / 3, alignItems: 'center', justifyContent: 'center' }}>
                     <Image source={profile} style={{ width: height / 25, height: height / 25 }} />
-                    <Text style={{ fontSize: 14, color: '#ebaa34' }}>Cá nhân</Text>
+                    <Text style={{ fontSize: 14, color: '#ebaa34' }}>Tài khoản</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity>
@@ -102,7 +102,7 @@ class Home extends React.Component<Props, State> {
             <View style={{ marginTop: 30, marginBottom: 10, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end' }}>
               <Text style={{ color: '#85563a', fontWeight: 'bold', fontSize: 15, marginStart: 10 }}>ĐẶT VÉ SỰ KIỆN</Text>
               <TouchableOpacity>
-                <Text style={{ fontSize: 13, color: '#85563a', marginEnd: 10 }}>Xem tất cả sự kiện ></Text>
+                <Text style={{ fontSize: 13, color: '#85563a', marginEnd: 10 }}>Xem tất cả sự kiện  <Text style={{ fontSize: 16 }}>></Text></Text>
               </TouchableOpacity>
             </View>
             <FlatList

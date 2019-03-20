@@ -1,9 +1,10 @@
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView, StatusBar, Platform } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
 import user from '../../../../assets/Profile/userlogin.png';
 import iconedit from '../../../../assets/Profile/iconedit.png';
 import iconfoward from '../../../../assets/Profile/iconfoward.png';
 import material from '../../../theme/variables/material';
+import NavigationBar from '../../../theme/components/NavigationBar';
 export default class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -14,7 +15,7 @@ export default class Profile extends React.Component {
     }
     render() {
         return (React.createElement(View, null,
-            React.createElement(View, { style: { height: material.deviceHeight - this.state.heightDialog - (Platform.OS === "ios" ? 0 : StatusBar.currentHeight) } },
+            React.createElement(View, { style: { marginTop: 50 } },
                 React.createElement(ScrollView, null,
                     React.createElement(View, { style: styles.viewUser },
                         React.createElement(View, { style: { paddingStart: 40 } }),
@@ -24,7 +25,7 @@ export default class Profile extends React.Component {
                         React.createElement(View, { style: { justifyContent: 'flex-end' } },
                             React.createElement(TouchableOpacity, { onPress: () => {
                                     this.props.onPressUserName();
-                                    this.setState({ heightDialog: 51 });
+                                    this.setState({ heightDialog: 50 });
                                     this.setState({ isShowDialog: true });
                                 } },
                                 React.createElement(Image, { source: iconedit, style: { marginBottom: 10 } })))),
@@ -66,23 +67,19 @@ export default class Profile extends React.Component {
                                 React.createElement(Text, null, "Chi ti\u1EBFt"),
                                 React.createElement(View, { style: { justifyContent: 'center', marginStart: 10 } },
                                     React.createElement(Image, { source: iconfoward }))))),
-                    !this.state.isShowDialog && React.createElement(View, { style: styles.grayline }))),
-            this.state.isShowDialog &&
-                React.createElement(View, null,
-                    React.createElement(View, { style: styles.grayline }),
-                    React.createElement(View, { style: { height: 50, flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' } },
-                        React.createElement(TouchableOpacity, { style: { marginEnd: 30 }, onPress: () => {
-                                this.setState({ heightDialog: 0 });
-                                this.setState({ isShowDialog: false });
-                                //this.props.canceInputData()
-                            } },
-                            React.createElement(Text, { style: { fontSize: 15, color: '#0c7e7c' } }, "H\u1EE6Y")),
-                        React.createElement(TouchableOpacity, { style: { marginEnd: 10 }, onPress: () => {
-                                this.setState({ heightDialog: 0 });
-                                this.setState({ isShowDialog: false });
-                                //this.props.saveData()
-                            } },
-                            React.createElement(Text, { style: { fontSize: 15, color: '#0c7e7c' } }, "L\u01AFU"))))));
+                    React.createElement(View, { style: styles.grayline }))),
+            React.createElement(View, null,
+                React.createElement(View, { style: { height: 50, flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' } },
+                    React.createElement(TouchableOpacity, { style: { marginEnd: 30 }, onPress: () => {
+                            this.setState({ heightDialog: 0 });
+                        } },
+                        React.createElement(Text, { style: { fontSize: 15, color: '#0c7e7c' } }, "H\u1EE6Y")),
+                    React.createElement(TouchableOpacity, { style: { marginEnd: 10 }, onPress: () => {
+                            this.setState({ heightDialog: 0 });
+                        } },
+                        React.createElement(Text, { style: { fontSize: 15, color: '#0c7e7c' } }, "L\u01AFU")))),
+            React.createElement(View, { style: { position: 'absolute', width: material.deviceWidth, height: 50, backgroundColor: '#000000' } },
+                React.createElement(NavigationBar, { goBack: () => this.props.navigation.goBack(), title: 'Th\u00F4ng tin c\u00E1 nh\u00E2n' }))));
     }
 }
 const styles = StyleSheet.create({

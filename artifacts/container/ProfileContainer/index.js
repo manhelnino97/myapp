@@ -73,7 +73,7 @@ class ProfileContainer extends React.Component {
         const switchEmail = (React.createElement(Switch, { value: this.props.switchEmail, style: { marginStart: 10 }, onValueChange: () => {
                 this.props.switchStatus(!this.props.switchEmail, 'email');
             } }));
-        return React.createElement(Profile, { textInputUserName: textInputUserName, textInputEmail: textInputEmail, textInputPhoneNumber: textInputPhoneNumber, textInputPassword: textInputPassword, textInputBirthday: textInputBirthday, textInputAddress: textInputAddress, switchSms: switchSms, switchEmail: switchEmail, onPressUserName: () => this.onPressUserName(), canceInputData: () => this.canceInputData() });
+        return React.createElement(Profile, { navigation: this.props.navigation, textInputUserName: textInputUserName, textInputEmail: textInputEmail, textInputPhoneNumber: textInputPhoneNumber, textInputPassword: textInputPassword, textInputBirthday: textInputBirthday, textInputAddress: textInputAddress, switchSms: switchSms, switchEmail: switchEmail, onPressUserName: () => this.onPressUserName(), canceInputData: () => this.canceInputData() });
     }
 }
 function bindAction(dispatch) {

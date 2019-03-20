@@ -180,6 +180,7 @@ class ProfileContainer extends React.Component<Props, State> {
 
 
         return <Profile
+            navigation={this.props.navigation}
             textInputUserName={textInputUserName}
             textInputEmail={textInputEmail}
             textInputPhoneNumber={textInputPhoneNumber}
@@ -187,7 +188,7 @@ class ProfileContainer extends React.Component<Props, State> {
             textInputBirthday={textInputBirthday}
             textInputAddress={textInputAddress}
             switchSms={switchSms}
-            switchEmail={switchEmail}
+            switchEmail={switchEmail}   
             onPressUserName={() => this.onPressUserName()}
             canceInputData={() => this.canceInputData()}
             // saveData={() => this.saveData()} 

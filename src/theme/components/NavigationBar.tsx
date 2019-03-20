@@ -12,14 +12,14 @@ export default class NavigationBar extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={{ width: width / 6, height: 50, alignItems: 'flex-start', justifyContent: 'center', paddingStart: 20 }}>
-                    <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+                <View style={{ width: width / 6, height: 50, alignItems: 'flex-start', justifyContent: 'center', paddingStart: 5 }}>
+                    <TouchableOpacity onPress={() => this.props.goBack()} style={{justifyContent:'center',height:40,paddingStart:10,paddingEnd:10}}>
                         <Image source={back} />
                     </TouchableOpacity>
                 </View>
 
                 <View style={{ width: width * 2 / 3, height: 50, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text style={{ color: '#FFFFFF', fontSize: 18 }}>Vé xe buýt 2 tầng Hà Nội</Text>
+                    <Text style={{ color: '#FFFFFF', fontSize: 18 }}>{this.props.title}</Text>
                 </View>
 
                 <View style={{ width: width / 6, height: 50 }}>

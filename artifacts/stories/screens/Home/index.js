@@ -44,7 +44,7 @@ class Home extends React.Component {
             React.createElement(ScrollView, null,
                 React.createElement(View, { style: { paddingBottom: 10 } },
                     React.createElement(Image, { source: logo, style: { width: width, height: height / 5 } }),
-                    React.createElement(View, { style: styles.container },
+                    React.createElement(View, { style: styles.box },
                         React.createElement(View, { style: { width: width - 40, height: height / 15, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' } },
                             React.createElement(Text, { style: { marginStart: 20, marginEnd: 5, fontWeight: 'bold', color: '#ebaa34' } }, "S\u1ED1 d\u01B0"),
                             React.createElement(Text, { style: { marginEnd: 20, fontWeight: 'bold', color: '#ebaa34' } }, "69.000 \u0111")),
@@ -57,7 +57,7 @@ class Home extends React.Component {
                             React.createElement(TouchableOpacity, { onPress: () => this.props.navigation.navigate('Profile') },
                                 React.createElement(View, { style: { width: (width - 40) / 3, alignItems: 'center', justifyContent: 'center' } },
                                     React.createElement(Image, { source: profile, style: { width: height / 25, height: height / 25 } }),
-                                    React.createElement(Text, { style: { fontSize: 14, color: '#ebaa34' } }, "C\u00E1 nh\u00E2n"))),
+                                    React.createElement(Text, { style: { fontSize: 14, color: '#ebaa34' } }, "T\u00E0i kho\u1EA3n"))),
                             React.createElement(TouchableOpacity, null,
                                 React.createElement(View, { style: { width: (width - 40) / 3, alignItems: 'center', justifyContent: 'center' } },
                                     React.createElement(Image, { source: notify, style: { width: height / 25, height: height / 25 } }),
@@ -67,7 +67,9 @@ class Home extends React.Component {
                     React.createElement(View, { style: { marginTop: 30, marginBottom: 10, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end' } },
                         React.createElement(Text, { style: { color: '#85563a', fontWeight: 'bold', fontSize: 15, marginStart: 10 } }, "\u0110\u1EB6T V\u00C9 S\u1EF0 KI\u1EC6N"),
                         React.createElement(TouchableOpacity, null,
-                            React.createElement(Text, { style: { fontSize: 13, color: '#85563a', marginEnd: 10 } }, "Xem t\u1EA5t c\u1EA3 s\u1EF1 ki\u1EC7n >"))),
+                            React.createElement(Text, { style: { fontSize: 13, color: '#85563a', marginEnd: 10 } },
+                                "Xem t\u1EA5t c\u1EA3 s\u1EF1 ki\u1EC7n  ",
+                                React.createElement(Text, { style: { fontSize: 16 } }, ">")))),
                     React.createElement(FlatList, { data: data1, renderItem: this.renderItem2 })))));
     }
 }

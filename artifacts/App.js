@@ -10,6 +10,7 @@ import Login from "./container/LoginContainer";
 import Profile from "./container/ProfileContainer";
 import BusTwoFloorTicket from './stories/screens/BusTwoFloorTicket/index';
 import WebSite from './stories/screens/WebSite/index';
+import Personal from './stories/screens/Personal/index';
 const deviceWidth = Dimensions.get("window").width;
 const Drawer = DrawerNavigator({
     Home: { screen: Home },
@@ -27,6 +28,7 @@ const App = StackNavigator({
     Profile: { screen: Profile },
     BusTwoFloorTicket: { screen: BusTwoFloorTicket },
     WebSite: { screen: WebSite },
+    Personal: { screen: Personal },
 }, {
     initialRouteName: "Login",
     headerMode: "none",

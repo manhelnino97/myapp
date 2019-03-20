@@ -33,9 +33,6 @@ export default class BusTwoFloorTicket extends Component {
 
     return (
       <View>
-        <View style={{ position: 'absolute', top: 10, width: deviceWidth, height: 50 }}>
-          <Text>aaaaaaaaaaaaaaaa</Text>
-        </View>
         <ScrollView style={{ backgroundColor: '#FFFFFF' }}>
           <View style={{ flexDirection: 'row', height: deviceHeight / 4 }}>
             <FlatList
@@ -44,11 +41,8 @@ export default class BusTwoFloorTicket extends Component {
               horizontal={true}
             />
           </View>
-          <View style={{ width: deviceWidth, alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
-            <Text style={{ color: '#000000', fontSize: 20 }}>Vé xe buýt 2 tầng Hà Nội</Text>
-          </View>
-
-          <Text style={{ height: 50, backgroundColor: '#d0d0d0', color: '#000000', textAlignVertical: 'center', fontSize: 16, paddingStart: 10, marginTop: 20 }}>THÔNG TIN VÉ</Text>
+          
+          <Text style={{ height: 50, backgroundColor: '#d0d0d0', color: '#000000', textAlignVertical: 'center', fontSize: 16, paddingStart: 10}}>THÔNG TIN VÉ</Text>
 
           <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
             <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Loại vé : </Text>
@@ -161,6 +155,9 @@ export default class BusTwoFloorTicket extends Component {
             <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>ĐẶT VÉ</Text>
           </View>
         </ScrollView>
+        <View style={{ position: 'absolute', width: deviceWidth, height: 50, backgroundColor: '#000000' }}>
+          <NavigationBar goBack={()=>this.props.navigation.goBack()} title='Vé xe buýt 2 tầng Hà Nội'/>
+        </View>
       </View>
     );
   }

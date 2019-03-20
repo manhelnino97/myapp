@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView, StatusBar,Platform } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView, StatusBar, Platform } from 'react-native'
 import { Switch } from 'native-base';
 
 import user from '../../../../assets/Profile/userlogin.png'
@@ -8,23 +8,21 @@ import iconfoward from '../../../../assets/Profile/iconfoward.png'
 import material from '../../../theme/variables/material'
 import Modal from "react-native-modal";
 
-
+import NavigationBar from '../../../theme/components/NavigationBar'
 
 export default class Profile extends React.Component {
     constructor(props) {
         super(props)
-
         this.state = {
             heightDialog: 0,
             isShowDialog: false,
         }
-
     }
 
     render() {
         return (
             <View>
-                <View style={{ height: material.deviceHeight  - this.state.heightDialog - (Platform.OS === "ios" ? 0 : StatusBar.currentHeight)}}>
+                <View style={{ marginTop: 50}}>
                     <ScrollView>
                         <View style={styles.viewUser}>
                             <View style={{ paddingStart: 40 }} />
@@ -36,7 +34,7 @@ export default class Profile extends React.Component {
                             <View style={{ justifyContent: 'flex-end' }}  >
                                 <TouchableOpacity onPress={() => {
                                     this.props.onPressUserName()
-                                    this.setState({ heightDialog: 51 })
+                                    this.setState({ heightDialog: 50 })
                                     this.setState({ isShowDialog: true })
                                 }}>
                                     <Image source={iconedit} style={{ marginBottom: 10 }} />
@@ -82,7 +80,7 @@ export default class Profile extends React.Component {
                         <View style={styles.textOption}>
                             <Text style={{ color: '#000000' }}>Ngôn ngữ</Text>
                             <TouchableOpacity>
-                                <View style={{ flexDirection: 'row',marginEnd:10 }}>
+                                <View style={{ flexDirection: 'row', marginEnd: 10 }}>
                                     <Text>Tiếng Việt</Text>
                                     <View style={{ justifyContent: 'center', marginStart: 10 }}>
                                         <Image source={iconfoward}></Image>
@@ -95,7 +93,7 @@ export default class Profile extends React.Component {
                         <View style={styles.textOption}>
                             <Text style={{ color: '#000000' }}>Quản lý địa chỉ</Text>
                             <TouchableOpacity>
-                                <View style={{ flexDirection: 'row',marginEnd:10 }}>
+                                <View style={{ flexDirection: 'row', marginEnd: 10 }}>
                                     <Text>Chi tiết</Text>
                                     <View style={{ justifyContent: 'center', marginStart: 10 }}>
                                         <Image source={iconfoward}></Image>
@@ -103,36 +101,34 @@ export default class Profile extends React.Component {
                                 </View>
                             </TouchableOpacity>
                         </View>
-                        { !this.state.isShowDialog && <View style={styles.grayline} /> }
-
+                        <View style={styles.grayline} />
                     </ScrollView>
                 </View>
 
-                {this.state.isShowDialog &&
-                    <View>
-                        <View style={styles.grayline} />
-                        <View style={{ height: 50, flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
-                            <TouchableOpacity style={{ marginEnd: 30 }}
-                                onPress={() => {
-                                    this.setState({ heightDialog: 0 })
-                                    this.setState({ isShowDialog: false })
-                                    //this.props.canceInputData()
-                                }}
-                            >
-                                <Text style={{ fontSize: 15, color: '#0c7e7c' }}>HỦY</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={{ marginEnd: 10 }}
-                                onPress={()=> {
-                                    this.setState({ heightDialog: 0 })
-                                    this.setState({ isShowDialog: false })
-                                    //this.props.saveData()
-                                }}
-                            >
-                                <Text style={{ fontSize: 15, color: '#0c7e7c' }}>LƯU</Text>
-                            </TouchableOpacity>
-                        </View>
+
+                <View>
+                    <View style={{ height: 50, flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
+                        <TouchableOpacity style={{ marginEnd: 30 }}
+                            onPress={() => {
+                                this.setState({ heightDialog: 0 })
+                            }}
+                        >
+                            <Text style={{ fontSize: 15, color: '#0c7e7c' }}>HỦY</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ marginEnd: 10 }}
+                            onPress={() => {
+                                this.setState({ heightDialog: 0 })
+                            }}
+                        >
+                            <Text style={{ fontSize: 15, color: '#0c7e7c' }}>LƯU</Text>
+                        </TouchableOpacity>
                     </View>
-                }
+                </View>
+
+
+                <View style={{ position: 'absolute', width: material.deviceWidth, height: 50, backgroundColor: '#000000' }}>
+                    <NavigationBar goBack={() => this.props.navigation.goBack()} title='Thông tin cá nhân' />
+                </View>
 
             </View>
         );
@@ -167,8 +163,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         height: 50,
-        paddingStart:15,
-        paddingEnd:5,
-        alignItems:'center'
+        paddingStart: 15,
+        paddingEnd: 5,
+        alignItems: 'center'
     }
 });

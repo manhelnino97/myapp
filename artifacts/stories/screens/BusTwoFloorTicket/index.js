@@ -11,6 +11,7 @@ import money from '../../../../assets/Bus2FloorTicket/money.png';
 import visaCard from '../../../../assets/Bus2FloorTicket/visaCard.png';
 import masterCard from '../../../../assets/Bus2FloorTicket/masterCard.png';
 import atm from '../../../../assets/Bus2FloorTicket/atm.png';
+import NavigationBar from '../../../theme/components/NavigationBar';
 export default class BusTwoFloorTicket extends Component {
     constructor() {
         super(...arguments);
@@ -24,14 +25,10 @@ export default class BusTwoFloorTicket extends Component {
     }
     render() {
         return (React.createElement(View, null,
-            React.createElement(View, { style: { position: 'absolute', top: 10, width: deviceWidth, height: 50 } },
-                React.createElement(Text, null, "aaaaaaaaaaaaaaaa")),
             React.createElement(ScrollView, { style: { backgroundColor: '#FFFFFF' } },
                 React.createElement(View, { style: { flexDirection: 'row', height: deviceHeight / 4 } },
                     React.createElement(FlatList, { data: [1, 2, 3, 4], renderItem: this.renderItem, horizontal: true })),
-                React.createElement(View, { style: { width: deviceWidth, alignItems: 'center', justifyContent: 'center', marginTop: 10 } },
-                    React.createElement(Text, { style: { color: '#000000', fontSize: 20 } }, "V\u00E9 xe bu\u00FDt 2 t\u1EA7ng H\u00E0 N\u1ED9i")),
-                React.createElement(Text, { style: { height: 50, backgroundColor: '#d0d0d0', color: '#000000', textAlignVertical: 'center', fontSize: 16, paddingStart: 10, marginTop: 20 } }, "TH\u00D4NG TIN V\u00C9"),
+                React.createElement(Text, { style: { height: 50, backgroundColor: '#d0d0d0', color: '#000000', textAlignVertical: 'center', fontSize: 16, paddingStart: 10 } }, "TH\u00D4NG TIN V\u00C9"),
                 React.createElement(View, { style: { height: 50, flexDirection: 'row', alignItems: 'center' } },
                     React.createElement(Text, { style: { width: deviceWidth * 0.25, color: '#000000', marginStart: 20 } }, "Lo\u1EA1i v\u00E9 : "),
                     React.createElement(View, { style: { width: deviceWidth * 0.75, alignItems: 'center' } },
@@ -88,7 +85,9 @@ export default class BusTwoFloorTicket extends Component {
                         React.createElement(Image, { source: atm })),
                     React.createElement(View, { style: styles.grayline })),
                 React.createElement(View, { style: { height: 50, backgroundColor: '#ebaa34', alignItems: 'center', justifyContent: 'center' } },
-                    React.createElement(Text, { style: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 } }, "\u0110\u1EB6T V\u00C9")))));
+                    React.createElement(Text, { style: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 } }, "\u0110\u1EB6T V\u00C9"))),
+            React.createElement(View, { style: { position: 'absolute', width: deviceWidth, height: 50, backgroundColor: '#000000' } },
+                React.createElement(NavigationBar, { goBack: () => this.props.navigation.goBack(), title: 'V\u00E9 xe bu\u00FDt 2 t\u1EA7ng H\u00E0 N\u1ED9i' }))));
     }
 }
 const styles = StyleSheet.create({
