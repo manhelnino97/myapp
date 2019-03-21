@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, TextInput, Switch } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, TextInput } from 'react-native';
 import { connect } from "react-redux";
 import Profile from '../../stories/screens/Profile';
 import DateTimePicker from 'react-native-modal-datetime-picker';
@@ -43,21 +43,21 @@ class ProfileContainer extends React.Component {
     //         }).catch((e)=> alert(e+''))
     // }
     render() {
-        const textInputUserName = (React.createElement(TextInput, { style: { color: "#000000", fontSize: 16 }, value: this.props.userName, onChangeText: (text) => {
+        const textInputUserName = (React.createElement(TextInput, { style: styles.textInput, value: this.props.userName, onChangeText: (text) => {
                 this.props.updateText(text, 'userName');
-            }, editable: this.props.isEditUserName }));
+            } }));
         const textInputEmail = (React.createElement(TextInput, { style: styles.textInput, value: this.props.email, onChangeText: (text) => {
                 this.props.updateText(text, 'email');
-            }, editable: this.props.isEditUserName }));
+            } }));
         const textInputPhoneNumber = (React.createElement(TextInput, { style: styles.textInput, value: this.props.phoneNumber, onChangeText: (text) => {
                 this.props.updateText(text, 'phoneNumber');
-            }, keyboardType: 'numeric', maxLength: 10, editable: this.props.isEditUserName }));
+            }, keyboardType: 'numeric', maxLength: 10 }));
         const textInputPassword = (React.createElement(TextInput, { style: styles.textInput, value: this.props.password, onChangeText: (text) => {
                 this.props.updateText(text, 'password');
-            }, editable: this.props.isEditUserName, secureTextEntry: true }));
+            }, secureTextEntry: true }));
         const textInputBirthday = (React.createElement(View, null,
             React.createElement(TouchableOpacity, { onPress: () => {
-                    this.props.isEditUserName ? this.props.showDatePicker(true) : '';
+                    this.props.showDatePicker(true);
                 } },
                 React.createElement(TextInput, { style: styles.textInput, value: this.props.birthday, editable: false })),
             React.createElement(DateTimePicker, { isVisible: this.props.isShowDatePicker, onCancel: this.props.showDatePicker(false), onConfirm: (date) => {
@@ -66,14 +66,8 @@ class ProfileContainer extends React.Component {
                 } })));
         const textInputAddress = (React.createElement(TextInput, { style: styles.textInput, value: this.props.address, onChangeText: (text) => {
                 this.props.updateText(text, 'address');
-            }, editable: this.props.isEditUserName }));
-        const switchSms = (React.createElement(Switch, { value: this.props.switchSms, style: { marginStart: 10 }, onValueChange: () => {
-                this.props.switchStatus(!this.props.switchSms, 'sms');
             } }));
-        const switchEmail = (React.createElement(Switch, { value: this.props.switchEmail, style: { marginStart: 10 }, onValueChange: () => {
-                this.props.switchStatus(!this.props.switchEmail, 'email');
-            } }));
-        return React.createElement(Profile, { navigation: this.props.navigation, textInputUserName: textInputUserName, textInputEmail: textInputEmail, textInputPhoneNumber: textInputPhoneNumber, textInputPassword: textInputPassword, textInputBirthday: textInputBirthday, textInputAddress: textInputAddress, switchSms: switchSms, switchEmail: switchEmail, onPressUserName: () => this.onPressUserName(), canceInputData: () => this.canceInputData() });
+        return React.createElement(Profile, { navigation: this.props.navigation, textInputUserName: textInputUserName, textInputEmail: textInputEmail, textInputPhoneNumber: textInputPhoneNumber, textInputPassword: textInputPassword, textInputBirthday: textInputBirthday, textInputAddress: textInputAddress, onPressUserName: () => this.onPressUserName(), canceInputData: () => this.canceInputData() });
     }
 }
 function bindAction(dispatch) {
@@ -91,9 +85,6 @@ const mapStateToProps = state => ({
     password: state.profileReducer.password,
     birthday: state.profileReducer.birthday,
     address: state.profileReducer.address,
-    isEditUserName: state.profileReducer.isEditUserName,
-    switchSms: state.profileReducer.switchSms,
-    switchEmail: state.profileReducer.switchEmail,
     isShowDatePicker: state.profileReducer.isShowDatePicker,
 });
 export default connect(mapStateToProps, bindAction)(ProfileContainer);

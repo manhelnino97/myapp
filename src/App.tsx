@@ -41,7 +41,7 @@ const App = StackNavigator(
 		Personal: { screen: Personal },
 	},
 	{
-		initialRouteName: "Login",
+		initialRouteName: "Home",
 		headerMode: "none",
 	}
 );

@@ -54,7 +54,7 @@ class Home extends React.Component {
                                 React.createElement(View, { style: { width: (width - 40) / 3, alignItems: 'center', justifyContent: 'center' } },
                                     React.createElement(Image, { source: pay, style: { width: height / 25, height: height / 25 } }),
                                     React.createElement(Text, { style: { fontSize: 14, color: '#ebaa34' } }, "N\u1EA1p ti\u1EC1n"))),
-                            React.createElement(TouchableOpacity, { onPress: () => this.props.navigation.navigate('Profile') },
+                            React.createElement(TouchableOpacity, { onPress: () => this.props.navigation.navigate('Personal') },
                                 React.createElement(View, { style: { width: (width - 40) / 3, alignItems: 'center', justifyContent: 'center' } },
                                     React.createElement(Image, { source: profile, style: { width: height / 25, height: height / 25 } }),
                                     React.createElement(Text, { style: { fontSize: 14, color: '#ebaa34' } }, "T\u00E0i kho\u1EA3n"))),

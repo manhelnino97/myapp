@@ -77,7 +77,7 @@ class Home extends React.Component<Props, State> {
                     <Text style={{ fontSize: 14, color: '#ebaa34' }}>Nạp tiền</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Personal')}>
                   <View style={{ width: (width - 40) / 3, alignItems: 'center', justifyContent: 'center' }}>
                     <Image source={profile} style={{ width: height / 25, height: height / 25 }} />
                     <Text style={{ fontSize: 14, color: '#ebaa34' }}>Tài khoản</Text>

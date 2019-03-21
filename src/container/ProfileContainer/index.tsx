@@ -78,12 +78,12 @@ class ProfileContainer extends React.Component<Props, State> {
 
         const textInputUserName = (
             <TextInput
-                style={{ color: "#000000", fontSize: 16 }}
+                style={styles.textInput}
                 value={this.props.userName}
                 onChangeText={(text) => {
                     this.props.updateText(text, 'userName')
                 }}
-                editable={this.props.isEditUserName}
+
             />
         );
 
@@ -94,7 +94,7 @@ class ProfileContainer extends React.Component<Props, State> {
                 onChangeText={(text) => {
                     this.props.updateText(text, 'email')
                 }}
-                editable={this.props.isEditUserName}
+
             />
         );
 
@@ -107,7 +107,7 @@ class ProfileContainer extends React.Component<Props, State> {
                 }}
                 keyboardType='numeric'
                 maxLength={10}
-                editable={this.props.isEditUserName}
+
             />
         );
 
@@ -118,7 +118,6 @@ class ProfileContainer extends React.Component<Props, State> {
                 onChangeText={(text) => {
                     this.props.updateText(text, 'password')
                 }}
-                editable={this.props.isEditUserName}
                 secureTextEntry={true}
             />
         );
@@ -126,7 +125,7 @@ class ProfileContainer extends React.Component<Props, State> {
         const textInputBirthday = (
             <View>
                 <TouchableOpacity onPress={() => {
-                    this.props.isEditUserName ? this.props.showDatePicker(true) : ''
+                    this.props.showDatePicker(true)
                 }}>
                     <TextInput
                         style={styles.textInput}
@@ -153,29 +152,9 @@ class ProfileContainer extends React.Component<Props, State> {
                 onChangeText={(text) => {
                     this.props.updateText(text, 'address')
                 }}
-                editable={this.props.isEditUserName}
             />
         );
 
-        const switchSms = (
-            <Switch
-                value={this.props.switchSms}
-                style={{ marginStart: 10 }}
-                onValueChange={() => {
-                    this.props.switchStatus(!this.props.switchSms, 'sms')
-                }}
-            />
-        );
-
-        const switchEmail = (
-            <Switch
-                value={this.props.switchEmail}
-                style={{ marginStart: 10 }}
-                onValueChange={() => {
-                    this.props.switchStatus(!this.props.switchEmail, 'email')
-                }}
-            />
-        );
 
 
 
@@ -187,12 +166,10 @@ class ProfileContainer extends React.Component<Props, State> {
             textInputPassword={textInputPassword}
             textInputBirthday={textInputBirthday}
             textInputAddress={textInputAddress}
-            switchSms={switchSms}
-            switchEmail={switchEmail}   
             onPressUserName={() => this.onPressUserName()}
             canceInputData={() => this.canceInputData()}
-            // saveData={() => this.saveData()} 
-            />
+        // saveData={() => this.saveData()} 
+        />
     }
 }
 
@@ -212,9 +189,6 @@ const mapStateToProps = state => ({
     password: state.profileReducer.password,
     birthday: state.profileReducer.birthday,
     address: state.profileReducer.address,
-    isEditUserName: state.profileReducer.isEditUserName,
-    switchSms: state.profileReducer.switchSms,
-    switchEmail: state.profileReducer.switchEmail,
     isShowDatePicker: state.profileReducer.isShowDatePicker,
 
 });

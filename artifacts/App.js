@@ -30,7 +30,7 @@ const App = StackNavigator({
     WebSite: { screen: WebSite },
     Personal: { screen: Personal },
 }, {
-    initialRouteName: "Login",
+    initialRouteName: "Home",
     headerMode: "none",
 });
 export default () => (React.createElement(Root, null,

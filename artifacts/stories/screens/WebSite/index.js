@@ -18,8 +18,7 @@ class WebSite extends React.Component {
                 React.createElement(WebView, { ref: 'WebView', source: { uri: param.url }, onLoadEnd: () => { this.setState({ loadWebview: false }); } }),
                 this.state.loadWebview ?
                     React.createElement(View, { style: { position: 'absolute', alignItems: 'center', justifyContent: 'center', top: 0, bottom: 0, right: 0, left: 0 } },
-                        React.createElement(ActivityIndicator, { size: "large", color: '#ebaa34' })) :
-                    null)));
+                        React.createElement(ActivityIndicator, { size: "large", color: '#ebaa34' })) : null)));
     }
 }
 export default WebSite;
