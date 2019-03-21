@@ -1,6 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import Home from "../../stories/screens/Home";
+import Home from "../../stories/screens/Home/index";
 class HomeContainer extends React.Component {
     componentDidMount() {
     }

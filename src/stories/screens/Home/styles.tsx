@@ -2,10 +2,10 @@ import { StyleSheet,Dimensions } from "react-native";
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
 const styles: any = StyleSheet.create({
-	container: {
+	box: {
 		height:deviceHeight / 6,
 		width: deviceWidth - 40,
-		backgroundColor: "#f5f5f5",
+		backgroundColor: "#f0f0f0",
 		justifyContent:'space-between',
 		marginStart: 20,
 		marginEnd: 20,
