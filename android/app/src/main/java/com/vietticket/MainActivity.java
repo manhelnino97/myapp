@@ -1,4 +1,4 @@
-package com.reactnativeseed;
+package com.vietticket;
 
 import android.content.Intent;
 

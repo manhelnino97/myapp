@@ -1,5 +1,5 @@
 
-package com.reactnativeseed;
+package com.vietticket;
 
 import android.app.Application;
 import com.facebook.CallbackManager;
