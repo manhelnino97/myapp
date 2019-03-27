@@ -24,8 +24,8 @@ export default class BusTwoFloorTicket extends Component {
         return (React.createElement(Image, { source: logo, style: { width: deviceWidth, height: deviceHeight / 4 } }));
     }
     render() {
-        return (React.createElement(View, null,
-            React.createElement(ScrollView, { style: { backgroundColor: '#FFFFFF' } },
+        return (React.createElement(View, { style: { backgroundColor: '#FFFFFF' } },
+            React.createElement(ScrollView, { style: { marginTop: 50 } },
                 React.createElement(View, { style: { flexDirection: 'row', height: deviceHeight / 4 } },
                     React.createElement(FlatList, { data: [1, 2, 3, 4], renderItem: this.renderItem, horizontal: true })),
                 React.createElement(Text, { style: { height: 50, backgroundColor: '#d0d0d0', color: '#000000', textAlignVertical: 'center', fontSize: 16, paddingStart: 10 } }, "TH\u00D4NG TIN V\u00C9"),
@@ -84,8 +84,9 @@ export default class BusTwoFloorTicket extends Component {
                             React.createElement(Text, { style: { marginStart: 10, color: '#000000' } }, "Th\u1EBB ATM n\u1ED9i \u0111\u1ECBa")),
                         React.createElement(Image, { source: atm })),
                     React.createElement(View, { style: styles.grayline })),
-                React.createElement(View, { style: { height: 50, backgroundColor: '#ebaa34', alignItems: 'center', justifyContent: 'center' } },
-                    React.createElement(Text, { style: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 } }, "\u0110\u1EB6T V\u00C9"))),
+                React.createElement(TouchableOpacity, null,
+                    React.createElement(View, { style: { height: 45, backgroundColor: '#ebaa34', alignItems: 'center', justifyContent: 'center' } },
+                        React.createElement(Text, { style: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 } }, "\u0110\u1EB6T V\u00C9")))),
             React.createElement(View, { style: { position: 'absolute', width: deviceWidth, height: 50, backgroundColor: '#000000' } },
                 React.createElement(NavigationBar, { goBack: () => this.props.navigation.goBack(), title: 'V\u00E9 xe bu\u00FDt 2 t\u1EA7ng H\u00E0 N\u1ED9i' }))));
     }

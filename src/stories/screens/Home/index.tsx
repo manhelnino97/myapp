@@ -13,8 +13,9 @@ import sun from '../../../../assets/sun.png'
 import nhac from '../../../../assets/nhac.png'
 import saigon from '../../../../assets/saigon.png'
 
+const deviceHeight = Dimensions.get("window").height;
+const deviceWidth = Dimensions.get("window").width;
 
-const { width, height } = Dimensions.get('window');
 export interface Props {
   navigation: any;
   list: any;
@@ -25,11 +26,11 @@ class Home extends React.Component<Props, State> {
   renderItem1 = ({ item }) => {
     return (
       <TouchableOpacity
-        style={{ width: width / 4, alignItems: 'center', marginTop: 10 }}
+        style={{ width: deviceWidth / 4, alignItems: 'center', marginTop: 10 }}
         onPress={() => {
-          item.type === 'navigation' ? this.props.navigation.navigate(item.url) : this.props.navigation.navigate('WebSite', { url: item.url})
+          item.type === 'navigation' ? this.props.navigation.navigate(item.url) : this.props.navigation.navigate('WebSite', { url: item.url })
         }}>
-        <Image source={item.icon} style={{ width: height / 20, height: height / 20 }} />
+        <Image source={item.icon} style={{ width: deviceHeight / 20, height: deviceHeight / 20 }} />
         <Text style={{ fontSize: 13, color: '#ebaa34', marginTop: 5, textAlign: 'center', padding: 5 }}>{item.name}</Text>
       </TouchableOpacity>
     )
@@ -38,7 +39,7 @@ class Home extends React.Component<Props, State> {
   renderItem2 = ({ item }) => {
     return (
       <TouchableOpacity style={{ marginStart: 10, marginBottom: 10 }}>
-        <Image source={item.image} style={{ width: width - 20, height: height / 5 }} />
+        <Image source={item.image} style={{ width: deviceWidth - 20, height: deviceHeight / 5 }} />
       </TouchableOpacity>
     )
   }
@@ -62,37 +63,37 @@ class Home extends React.Component<Props, State> {
       <View style={{ backgroundColor: '#FFFFFF' }} >
         <ScrollView>
           <View style={{ paddingBottom: 10 }}>
-            <Image source={logo} style={{ width: width, height: height / 5 }} />
+            <Image source={logo} style={{ width: deviceWidth, height: deviceHeight / 5 }} />
 
             <View style={styles.box}>
-              <View style={{ width: width - 40, height: height / 15, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+              <View style={{ width: deviceWidth - 40, height: deviceHeight / 15, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Text style={{ marginStart: 20, marginEnd: 5, fontWeight: 'bold', color: '#ebaa34' }}>Số dư</Text>
                 <Text style={{ marginEnd: 20, fontWeight: 'bold', color: '#ebaa34' }}>69.000 đ</Text>
               </View>
-              <View style={{ width: width - 60, height: 1, backgroundColor: '#e0e0e0', marginStart: 10, marginEnd: 10 }} />
-              <View style={{ width: width - 40, height: height / 10 - 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                <TouchableOpacity onPress={() => { }}>
-                  <View style={{ width: (width - 40) / 3, alignItems: 'center', justifyContent: 'center' }}>
-                    <Image source={pay} style={{ width: height / 25, height: height / 25 }} />
+              <View style={{ width: deviceWidth - 60, height: 1, backgroundColor: '#e0e0e0', marginStart: 10, marginEnd: 10 }} />
+              <View style={{ width: deviceWidth - 40, height: deviceHeight / 10 - 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Recharge')}>
+                  <View style={{ width: (deviceWidth - 40) / 3, alignItems: 'center', justifyContent: 'center' }}>
+                    <Image source={pay} style={{ width: deviceHeight / 25, height: deviceHeight / 25 }} />
                     <Text style={{ fontSize: 14, color: '#ebaa34' }}>Nạp tiền</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('Personal')}>
-                  <View style={{ width: (width - 40) / 3, alignItems: 'center', justifyContent: 'center' }}>
-                    <Image source={profile} style={{ width: height / 25, height: height / 25 }} />
+                  <View style={{ width: (deviceWidth - 40) / 3, alignItems: 'center', justifyContent: 'center' }}>
+                    <Image source={profile} style={{ width: deviceHeight / 25, height: deviceHeight / 25 }} />
                     <Text style={{ fontSize: 14, color: '#ebaa34' }}>Tài khoản</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                  <View style={{ width: (width - 40) / 3, alignItems: 'center', justifyContent: 'center' }}>
-                    <Image source={notify} style={{ width: height / 25, height: height / 25 }} />
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Promotion')}>
+                  <View style={{ width: (deviceWidth - 40) / 3, alignItems: 'center', justifyContent: 'center' }}>
+                    <Image source={notify} style={{ width: deviceHeight / 25, height: deviceHeight / 25 }} />
                     <Text style={{ fontSize: 14, color: '#ebaa34' }}>Khuyến mại</Text>
                   </View>
                 </TouchableOpacity>
               </View>
             </View>
 
-            <Text style={{ marginTop: height / 6 + 15, color: '#85563a', fontWeight: 'bold', fontSize: 15, marginStart: 10 }}>ĐẶT VÉ TÀU, XE, MÁY BAY</Text>
+            <Text style={{ marginTop: deviceHeight / 6 + 15, color: '#85563a', fontWeight: 'bold', fontSize: 15, marginStart: 10 }}>ĐẶT VÉ TÀU, XE, MÁY BAY</Text>
             <FlatList
               data={data}
               renderItem={this.renderItem1}
@@ -101,7 +102,7 @@ class Home extends React.Component<Props, State> {
 
             <View style={{ marginTop: 30, marginBottom: 10, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end' }}>
               <Text style={{ color: '#85563a', fontWeight: 'bold', fontSize: 15, marginStart: 10 }}>ĐẶT VÉ SỰ KIỆN</Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('AllEvents')}>
                 <Text style={{ fontSize: 13, color: '#85563a', marginEnd: 10 }}>Xem tất cả sự kiện  <Text style={{ fontSize: 16 }}>></Text></Text>
               </TouchableOpacity>
             </View>

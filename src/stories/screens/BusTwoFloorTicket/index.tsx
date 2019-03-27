@@ -32,8 +32,8 @@ export default class BusTwoFloorTicket extends Component {
   render() {
 
     return (
-      <View>
-        <ScrollView style={{ backgroundColor: '#FFFFFF' }}>
+      <View style={{ backgroundColor: '#FFFFFF' }}>
+        <ScrollView style={{ marginTop:50 }}>
           <View style={{ flexDirection: 'row', height: deviceHeight / 4 }}>
             <FlatList
               data={[1, 2, 3, 4]}
@@ -41,8 +41,8 @@ export default class BusTwoFloorTicket extends Component {
               horizontal={true}
             />
           </View>
-          
-          <Text style={{ height: 50, backgroundColor: '#d0d0d0', color: '#000000', textAlignVertical: 'center', fontSize: 16, paddingStart: 10}}>THÔNG TIN VÉ</Text>
+
+          <Text style={{ height: 50, backgroundColor: '#d0d0d0', color: '#000000', textAlignVertical: 'center', fontSize: 16, paddingStart: 10 }}>THÔNG TIN VÉ</Text>
 
           <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
             <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Loại vé : </Text>
@@ -151,12 +151,14 @@ export default class BusTwoFloorTicket extends Component {
             </View>
             <View style={styles.grayline} />
           </RadioButton.Group>
-          <View style={{ height: 50, backgroundColor: '#ebaa34', alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>ĐẶT VÉ</Text>
-          </View>
+          <TouchableOpacity>
+            <View style={{ height: 45, backgroundColor: '#ebaa34', alignItems: 'center', justifyContent: 'center' }}>
+              <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>ĐẶT VÉ</Text>
+            </View>
+          </TouchableOpacity>
         </ScrollView>
         <View style={{ position: 'absolute', width: deviceWidth, height: 50, backgroundColor: '#000000' }}>
-          <NavigationBar goBack={()=>this.props.navigation.goBack()} title='Vé xe buýt 2 tầng Hà Nội'/>
+          <NavigationBar goBack={() => this.props.navigation.goBack()} title='Vé xe buýt 2 tầng Hà Nội' />
         </View>
       </View>
     );

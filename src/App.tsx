@@ -13,8 +13,9 @@ import Profile from "./container/ProfileContainer";
 import BusTwoFloorTicket from './stories/screens/BusTwoFloorTicket/index'
 import WebSite from './stories/screens/WebSite/index'
 import Personal from './stories/screens/Personal/index'
-
-
+import AllEvents from './stories/screens/AllEvents/index'
+import Recharge from './stories/screens/Recharge/index'
+import Promotion from './stories/screens/Promotion/index'
 const deviceWidth = Dimensions.get("window").width;
 
 const Drawer = DrawerNavigator(
@@ -39,9 +40,12 @@ const App = StackNavigator(
 		BusTwoFloorTicket: { screen: BusTwoFloorTicket },
 		WebSite: { screen: WebSite },
 		Personal: { screen: Personal },
+		AllEvents: {screen: AllEvents},
+		Recharge: {screen: Recharge},
+		Promotion: {screen: Promotion},
 	},
 	{
-		initialRouteName: "Home",
+		initialRouteName: "Login",
 		headerMode: "none",
 	}
 );
