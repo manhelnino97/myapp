@@ -1,6 +1,6 @@
 const initialState = {
-    email: '',
-    password: '',
+    email: 'manhelnino97@gmail.com',
+    password: '12345678',
 };
 export default function (state = initialState, action) {
     if (action.type === "UP_DATE_TEXT") {

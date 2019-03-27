@@ -154,12 +154,17 @@ dependencies {
     compile project(':react-native-fbsdk')
     compile project(':react-native-facebook-account-kit')
     compile project(':react-native-camera')
+    implementation project(':rn-fetch-blob')
+    implementation project(':react-native-google-signin')
+    implementation project(':react-native-fbsdk')
+    implementation project(':react-native-facebook-account-kit')
+    implementation project(':react-native-camera')
     implementation project(':react-native-google-signin')
     implementation project(':react-native-fbsdk')
     implementation project(':react-native-facebook-account-kit')
 
-  implementation (project(':react-native-camera'))
-        implementation project(':react-native-vector-icons')
+    implementation (project(':react-native-camera'))
+    implementation project(':react-native-vector-icons')
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDependency,GradleCompatible

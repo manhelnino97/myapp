@@ -8,26 +8,18 @@ import email from '../../../../assets/Register/email.png'
 import clock from '../../../../assets/Register/clock.png'
 
 import material from '../../../theme/variables/material';
-
+GoogleSignin.configure();
 export default class Login extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            userName: '',
-            password: ''
-        }
-    }
-
-    _fbAuth() {
-        LoginManager.logInWithReadPermissions(['public_profile', 'email']).then(function (result) {
+    
+    async loginFB() {
+        await LoginManager.logInWithReadPermissions(['public_profile', 'email']).then(function (result) {
             if (result.isCancelled) {
                 alert("Login Cancelled");
             } else {
-                //alert("Login Success permission granted:" + result.grantedPermissions);
                 AccessToken.getCurrentAccessToken().then(
                     (data) => {
                         //console.log(data.accessToken.toString())
-                        fetch('https://graph.facebook.com/v2.5/me?fields=email,name,picture.width(300).height(300)&access_token=' + data.accessToken.toString())
+                        fetch('https://graph.facebook.com/v2.5/me?fields=id,email,name&access_token=' + data.accessToken.toString())
                             .then((response) => response.json())
                             .then((json) => { alert(JSON.stringify(json)) })
                             .catch(() => {
@@ -41,21 +33,16 @@ export default class Login extends Component {
         })
     }
 
-    async signIn(){
+
+    async loginGG() {
         try {
-            await GoogleSignin.hasPlayServices().catch(e=>alert(e));
-            const userInfo = await GoogleSignin.signIn().catch(e=>alert('error: '+e));;
-            //alert(JSON.stringify(userInfo))
+            await GoogleSignin.hasPlayServices()
+                .then(() => GoogleSignin.signIn()
+                    .then((userInfo) => alert(JSON.stringify(userInfo.user)))
+                    .catch(e => console.log('error: ' + e)))
+                .catch(e => alert(e));
         } catch (error) {
-            if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-                // user cancelled the login flow
-            } else if (error.code === statusCodes.IN_PROGRESS) {
-                // operation (f.e. sign in) is in progress already
-            } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-                // play services not available or outdated
-            } else {
-                // some other error happened
-            }
+            alert('ERROR GETTING DATA FROM GOOGLE')
         }
     };
 
@@ -98,10 +85,10 @@ export default class Login extends Component {
                         <View style={{ flex: 1, alignItems: 'center' }}>
                             <Text >Bạn có thể đăng nhập qua các tài khoản</Text>
                             <View style={{ flexDirection: 'row', marginTop: 10 }} >
-                                <TouchableOpacity onPress={() => this._fbAuth()}>
+                                <TouchableOpacity onPress={() => this.loginFB()}>
                                     <Image source={facebook} style={{ marginEnd: 10 }} />
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={() => this.signIn()}>
+                                <TouchableOpacity onPress={() => this.loginGG()}>
                                     <Image source={google} />
                                 </TouchableOpacity>
                             </View>
