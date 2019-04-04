@@ -8,7 +8,7 @@ const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
 import { checkMonth } from '../../../helper/Function'
 
-import logo from '../../../../assets/logo.png'
+import xebuyt from '../../../../assets/Bus2FloorTicket/xebuyt.png'
 import money from '../../../../assets/Bus2FloorTicket/money.png'
 import visaCard from '../../../../assets/Bus2FloorTicket/visaCard.png'
 import masterCard from '../../../../assets/Bus2FloorTicket/masterCard.png'
@@ -25,7 +25,7 @@ export default class BusTwoFloorTicket extends Component {
 
   renderItem() {
     return (
-      <Image source={logo} style={{ width: deviceWidth, height: deviceHeight / 4 }} />
+      <Image source={xebuyt} style={{ width: deviceWidth, height: deviceHeight / 4 }} />
     )
   }
 
@@ -36,7 +36,7 @@ export default class BusTwoFloorTicket extends Component {
         <ScrollView style={{ marginTop:50 }}>
           <View style={{ flexDirection: 'row', height: deviceHeight / 4 }}>
             <FlatList
-              data={[1, 2, 3, 4]}
+              data={[1]}
               renderItem={this.renderItem}
               horizontal={true}
             />
