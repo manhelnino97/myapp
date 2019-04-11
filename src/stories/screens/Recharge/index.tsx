@@ -26,11 +26,11 @@ export default class Recharge extends Component {
                     <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#85563a' }}>Số dư trong ví</Text>
                     <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#85563a' }}>69.000 đ</Text>
                 </View>
-                <View style={{ width: deviceWidth, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingStart: 10, paddingEnd: 20 }}>
+                <View style={{ width: deviceWidth, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingStart: 10, paddingEnd: 20, marginTop: 10}}>
                     <TextInput
                         placeholder='Nhập số tiền'
                         placeholderTextColor='#999999'
-                        style={{ fontSize: 20, color: '#85563a' }}
+                        style={{ fontSize: 20, color: '#85563a', height: 60 }}
                         keyboardType='numeric'
                     />
                     <Text style={{ fontSize: 20, color: '#85563a' }}>đ</Text>

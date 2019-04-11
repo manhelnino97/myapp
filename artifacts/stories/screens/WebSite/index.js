@@ -13,7 +13,7 @@ class WebSite extends React.Component {
         const param = this.props.navigation.state.params;
         return (React.createElement(View, { style: { flex: 1 } },
             React.createElement(View, { style: { position: 'absolute', width: width, height: 50, top: 0 } },
-                React.createElement(NavigationBar, { goBack: () => this.props.navigation.goBack(), title: param.url })),
+                React.createElement(NavigationBar, { goBack: () => this.props.navigation.goBack(), title: param.name })),
             React.createElement(View, { style: { flex: 1, marginTop: 50, overflow: 'hidden' } },
                 React.createElement(WebView, { ref: 'WebView', source: { uri: param.url }, onLoadEnd: () => { this.setState({ loadWebview: false }); } }),
                 this.state.loadWebview ?

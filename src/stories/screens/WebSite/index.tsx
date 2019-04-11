@@ -20,7 +20,7 @@ class WebSite extends React.Component<Props, State> {
         return (
             <View style={{ flex: 1 }}>
                 <View style={{ position: 'absolute', width: width, height: 50, top: 0 }}>
-                    <NavigationBar goBack={() => this.props.navigation.goBack()} title={param.url} />
+                    <NavigationBar goBack={() => this.props.navigation.goBack()} title={param.name} />
                 </View>
                 <View style={{ flex: 1, marginTop: 50, overflow: 'hidden' }}>
                     <WebView

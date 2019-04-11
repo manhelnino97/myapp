@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    View, StyleSheet, Dimensions, Image, TouchableOpacity, Text
+    View, StyleSheet, Dimensions, Image, TouchableOpacity, Text, Platform
 } from 'react-native';
 const { width, height } = Dimensions.get('window');
 import back from '../../../assets/back.png'
@@ -11,9 +11,9 @@ export default class NavigationBar extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={[styles.container, Platform.OS === 'ios' ? styles.iosStatusBar : {}]}>
                 <View style={{ width: width / 6, height: 50, alignItems: 'flex-start', justifyContent: 'center', paddingStart: 5 }}>
-                    <TouchableOpacity onPress={() => this.props.goBack()} style={{justifyContent:'center',height:40,paddingStart:10,paddingEnd:10}}>
+                    <TouchableOpacity onPress={() => this.props.goBack()} style={{ justifyContent: 'center', height: 40, paddingStart: 10, paddingEnd: 10 }}>
                         <Image source={back} />
                     </TouchableOpacity>
                 </View>
@@ -37,4 +37,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ebaa34',
         flexDirection: 'row'
     },
+    iosStatusBar: {
+        paddingTop: 15
+    }
 });

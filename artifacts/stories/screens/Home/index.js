@@ -19,10 +19,10 @@ class Home extends React.Component {
         super(...arguments);
         this.renderItem1 = ({ item }) => {
             return (React.createElement(TouchableOpacity, { style: { width: deviceWidth / 4, alignItems: 'center', marginTop: 10 }, onPress: () => {
-                    item.type === 'navigation' ? this.props.navigation.navigate(item.url) : this.props.navigation.navigate('WebSite', { url: item.url });
+                    item.type === 'navigation' ? this.props.navigation.navigate(item.url) : this.props.navigation.navigate('WebSite', { url: item.url, name: item.name });
                 } },
                 React.createElement(Image, { source: item.icon, style: { width: deviceHeight / 20, height: deviceHeight / 20 } }),
-                React.createElement(Text, { style: { fontSize: 13, color: '#ebaa34', marginTop: 5, textAlign: 'center', padding: 5 } }, item.name)));
+                React.createElement(Text, { style: { fontSize: 13, color: '#ebaa34', marginTop: 5, textAlign: 'center', padding: 5 }, numberOfLines: 1, ellipsizeMode: 'tail' }, item.name)));
         };
         this.renderItem2 = ({ item }) => {
             return (React.createElement(TouchableOpacity, { style: { marginStart: 10, marginBottom: 10 } },
@@ -31,9 +31,10 @@ class Home extends React.Component {
     }
     render() {
         const data = [
-            { id: '1', type: 'navigation', name: 'Vé xe buýt', url: 'BusTwoFloorTicket', icon: bus },
-            { id: '2', type: 'webview', name: 'Vexere ', url: 'https://vexere.com/', icon: ticket },
+            { id: '1', type: 'navigation', name: 'Vé xe buýt 2 tầng', url: 'BusTwoFloorTicket', icon: bus },
+            { id: '2', type: 'webview', name: 'Vé xe khách ', url: 'https://vexere.com/', icon: ticket },
             { id: '3', type: 'webview', name: 'Vé máy bay', url: 'https://www.gotadi.com/', icon: plane },
+            { id: '3', type: 'webview', name: 'Vé tàu hỏa', url: 'http://datve.vetaugiare24h.com/home2.php', icon: bus },
         ];
         const data1 = [
             { id: '1', image: vcs },

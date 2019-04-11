@@ -9,8 +9,9 @@ import Sidebar from "./container/SidebarContainer";
 import Register from "./container/RegisterContainer";
 import Login from "./container/LoginContainer";
 import Profile from "./container/ProfileContainer";
+import BusTwoFloorTicket from "./container/BusTwoFloorTicketContainer";
 
-import BusTwoFloorTicket from './stories/screens/BusTwoFloorTicket/index'
+
 import WebSite from './stories/screens/WebSite/index'
 import Personal from './stories/screens/Personal/index'
 import AllEvents from './stories/screens/AllEvents/index'
