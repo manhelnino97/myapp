@@ -31,7 +31,7 @@ class Home extends React.Component<Props, State> {
           item.type === 'navigation' ? this.props.navigation.navigate(item.url) : this.props.navigation.navigate('WebSite', { url: item.url, name: item.name })
         }}>
         <Image source={item.icon} style={{ width: deviceHeight / 20, height: deviceHeight / 20 }} />
-        <Text style={{ fontSize: 13, color: '#ebaa34', marginTop: 5, textAlign: 'center', padding: 5 }}>{item.name}</Text>
+        <Text style={{ fontSize: 13, color: '#ebaa34', marginTop: 5, textAlign: 'center', padding: 5 }} numberOfLines={1} ellipsizeMode='tail'>{item.name}</Text>
       </TouchableOpacity>
     )
   }
@@ -46,7 +46,7 @@ class Home extends React.Component<Props, State> {
 
   render() {
     const data = [
-      { id: '1', type: 'navigation', name: 'Vé xe buýt', url: 'BusTwoFloorTicket', icon: bus },
+      { id: '1', type: 'navigation', name: 'Vé xe buýt 2 tầng', url: 'BusTwoFloorTicket', icon: bus },
       { id: '2', type: 'webview', name: 'Vé xe khách ', url: 'https://vexere.com/', icon: ticket },
       { id: '3', type: 'webview', name: 'Vé máy bay', url: 'https://www.gotadi.com/', icon: plane },
       { id: '3', type: 'webview', name: 'Vé tàu hỏa', url: 'http://datve.vetaugiare24h.com/home2.php', icon: bus },
@@ -82,7 +82,7 @@ class Home extends React.Component<Props, State> {
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('Personal')}>
                   <View style={{ width: (deviceWidth - 40) / 3, alignItems: 'center', justifyContent: 'center' }}>
                     <Image source={profile} style={{ width: deviceHeight / 25, height: deviceHeight / 25 }} />
-                    
+
                     <Text style={{ fontSize: 14, color: '#ebaa34' }}>Tài khoản</Text>
                   </View>
                 </TouchableOpacity>

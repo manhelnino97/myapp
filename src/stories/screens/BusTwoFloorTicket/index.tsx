@@ -33,7 +33,7 @@ export default class BusTwoFloorTicket extends Component {
 
     return (
       <View style={{ backgroundColor: '#FFFFFF' }}>
-        <ScrollView style={{ marginTop:50 }}>
+        <ScrollView style={{ marginTop: 50 }}>
           <View style={{ flexDirection: 'row', height: deviceHeight / 4 }}>
             <FlatList
               data={[1]}
@@ -42,14 +42,89 @@ export default class BusTwoFloorTicket extends Component {
             />
           </View>
 
-          <Text style={{ height: 50, backgroundColor: '#d0d0d0', color: '#000000', textAlignVertical: 'center', fontSize: 16, paddingStart: 10 }}>THÔNG TIN VÉ</Text>
+          <View style={{ height: 30, backgroundColor: '#d0d0d0' }}></View>
+
+          <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ color: '#000000', marginStart: 20 }} >Họ và Tên <Text style={{ color: 'red' }}>*</Text>:</Text>
+            <TextInput style={{ flex: 1, height: 50 }}
+            />
+          </View>
+          <View style={styles.grayline} />
+
+          <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ color: '#000000', marginStart: 20 }} >Email <Text style={{ color: 'red' }}>*</Text>:</Text>
+            <TextInput style={{ flex: 1, height: 50 }}
+            />
+          </View>
+          <View style={styles.grayline} />
+
+          <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ color: '#000000', marginStart: 20 }} >Số điện thoại :</Text>
+            <TextInput
+              style={{ flex: 1, height: 50 }}
+              keyboardType='numeric'
+            />
+          </View>
+          <View style={styles.grayline} />
+
+          <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Thành Phố : </Text>
+            <View style={{ width: deviceWidth * 0.75, alignItems: 'center' }}>
+              <ModalDropdown
+                options={['Hà Nội']}
+                defaultValue='Chọn thành phố'
+                style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#f0f0f0', paddingStart: 10, paddingEnd: 10, height: 35 }}
+                textStyle={{ fontSize: 15, textAlign: 'left', textAlignVertical: 'center', color: '#000000' }}
+                dropdownTextStyle={{ fontSize: 14, marginStart: 10, marginEnd: 10 }}
+                onSelect={(idx, value) => { }}
+              />
+            </View>
+          </View>
+          <View style={styles.grayline} />
+
+          <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Tuyến : </Text>
+            <View style={{ width: deviceWidth * 0.75, alignItems: 'center' }}>
+              <ModalDropdown
+                options={["Thăng Long - Hà Nội City Tour"]}
+                defaultValue='Chọn tuyến'
+                style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#f0f0f0', paddingStart: 10, paddingEnd: 10, height: 35 }}
+                textStyle={{ fontSize: 15, textAlign: 'left', textAlignVertical: 'center', color: '#000000' }}
+                dropdownTextStyle={{ fontSize: 14, marginStart: 10, marginEnd: 10 }}
+                onSelect={(idx, value) => { }}
+              />
+            </View>
+          </View>
+          <View style={styles.grayline} />
+
+          <Text style={{ marginStart: 15, marginEnd: 10, marginTop: 10 }}>
+            Mô tả: Thăng long – Hà Nội City Tour với lộ trình tuyến khoảng 90 phút sẽ đưa du khách thăm quan các danh lam thắng cảnh, các công trình, di tích lịch sử, văn hóa, tôn giáo chính của thủ đô Hà Nội như: Vườn hoa Lý Thái Tổ, Khách sạn Sofitel Metropole, Bảo tàng Quân đội Việt nam, Di tích Hoàng thành Thăng Long, Đền Quán Thánh, Chùa Trấn Quốc, Cụm di tích Lăng chủ tịch Hồ Chí Minh, Văn miếu – Quốc Tử Giám, Nhà tù Hỏa Lò, Nhà thờ lớn Hà Nội, phố cổ Hà Nội, Hồ Gươm, Nhà hát lớn thành phố.
+          </Text>
+          <Text style={{ marginStart: 15, marginEnd: 10, color: '#000000' }}>Điểm bắt đầu: Vườn hoa Con Cóc</Text>
+          <Text style={{ marginStart: 15, marginEnd: 10, marginBottom: 10, color: '#000000' }}>Điểm kết thúc: Vườn hoa Con Cóc</Text>
+
+          <View style={styles.grayline} />
+          <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Độ tuổi : </Text>
+            <View style={{ width: deviceWidth * 0.75, alignItems: 'center' }}>
+              <ModalDropdown
+                options={["Từ 6 đến 11 tuổi", "Trên 11 tuổi"]}
+                defaultValue='Chọn độ tuổi'
+                style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#f0f0f0', paddingStart: 10, paddingEnd: 10, height: 35 }}
+                textStyle={{ fontSize: 15, textAlign: 'left', textAlignVertical: 'center', color: '#000000' }}
+                dropdownTextStyle={{ fontSize: 14, marginStart: 10, marginEnd: 10 }}
+                onSelect={(idx, value) => { }}
+              />
+            </View>
+          </View>
+          <View style={styles.grayline} />
 
           <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
             <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Loại vé : </Text>
             <View style={{ width: deviceWidth * 0.75, alignItems: 'center' }}>
               <ModalDropdown
-                options={['Loại 1', 'Loại 2', 'Loại 3', 'Loại 4', 'Loại 5']}
-                defaultValue='Loại 1'
+                options={["4 giờ", "24 giờ", "48 giờ"]}
+                defaultValue='Chọn loại vé'
                 style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#f0f0f0', paddingStart: 10, paddingEnd: 10, height: 35 }}
                 textStyle={{ fontSize: 15, textAlign: 'left', textAlignVertical: 'center', color: '#000000' }}
                 dropdownTextStyle={{ fontSize: 14, marginStart: 10, marginEnd: 10 }}
@@ -59,22 +134,7 @@ export default class BusTwoFloorTicket extends Component {
           </View>
           <View style={styles.grayline} />
 
-          <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
-            <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Số lượng : </Text>
-            <View style={{ width: deviceWidth * 0.75, alignItems: 'center' }}>
-              <ModalDropdown
-                options={['1', '2', '3', '4', '5']}
-                defaultValue='1'
-                style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#f0f0f0', paddingStart: 10, paddingEnd: 10, height: 35 }}
-                textStyle={{ fontSize: 15, textAlign: 'left', textAlignVertical: 'center', color: '#000000' }}
-                dropdownTextStyle={{ fontSize: 14, marginStart: 10, marginEnd: 10 }}
-                onSelect={(idx, value) => { }}
-              />
-            </View>
-          </View>
-          <View style={styles.grayline} />
-
-          <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
+          {/* <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
             <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Ngày mua : </Text>
             <View style={{ width: deviceWidth * 0.75, alignItems: 'center' }}>
               <View style={{ backgroundColor: '#f0f0f0', paddingStart: 10, paddingEnd: 10, height: 35, alignItems: 'center', justifyContent: 'center' }}>
@@ -92,32 +152,7 @@ export default class BusTwoFloorTicket extends Component {
                 this.setState({ textDay: checkMonth(arrDate[1]) + '-' + arrDate[2] + '-' + arrDate[3] })
               }}
             />
-          </View>
-
-          <Text style={{ height: 50, backgroundColor: '#d0d0d0', color: '#000000', textAlignVertical: 'center', fontSize: 16, paddingStart: 10 }}>THÔNG TIN CÁ NHÂN</Text>
-
-          <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
-            <Text style={{ color: '#000000', marginStart: 20 }} >Họ và Tên :</Text>
-            <TextInput style={{ flex: 1, height: 50 }}
-            />
-          </View>
-          <View style={styles.grayline} />
-
-          <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
-            <Text style={{ color: '#000000', marginStart: 20 }} >Email :</Text>
-            <TextInput style={{ flex: 1, height: 50 }}
-            />
-          </View>
-          <View style={styles.grayline} />
-
-          <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
-            <Text style={{ color: '#000000', marginStart: 20 }} >Số điện thoại :</Text>
-            <TextInput
-              style={{ flex: 1, height: 50 }}
-              keyboardType='numeric'
-            />
-          </View>
-          <View style={styles.grayline} />
+          </View> */}
 
           <Text style={{ height: 50, backgroundColor: '#d0d0d0', color: '#000000', textAlignVertical: 'center', fontSize: 16, paddingStart: 10 }}>PHƯƠNG THỨC THANH TOÁN</Text>
           <RadioButton.Group
@@ -151,6 +186,8 @@ export default class BusTwoFloorTicket extends Component {
             </View>
             <View style={styles.grayline} />
           </RadioButton.Group>
+
+          <Text style={{marginStart:15, marignEnd:10}}>Sau khi thanh toán thành công, bạn sẽ nhận được một email có vé chứa tất cả thông tin bạn cần!</Text>
           <TouchableOpacity>
             <View style={{ height: 45, backgroundColor: '#ebaa34', alignItems: 'center', justifyContent: 'center' }}>
               <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>ĐẶT VÉ</Text>
@@ -158,7 +195,7 @@ export default class BusTwoFloorTicket extends Component {
           </TouchableOpacity>
         </ScrollView>
         <View style={{ position: 'absolute', width: deviceWidth, height: 50, backgroundColor: '#000000' }}>
-          <NavigationBar goBack={() => this.props.navigation.goBack()} title='Vé xe buýt 2 tầng Hà Nội' />
+          <NavigationBar goBack={() => this.props.navigation.goBack()} title='Vé xe buýt 2 tầng' />
         </View>
       </View>
     );
