@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView, StatusBar, Dimensions } from 'react-native'
 import { Switch } from 'native-base';
+import { NavigationActions } from "react-navigation";
 
 import user from '../../../../assets/Profile/userlogin.png'
 import iconedit from '../../../../assets/Profile/iconedit.png'
 import iconfoward from '../../../../assets/Profile/iconfoward.png'
-import Modal from "react-native-modal";
-
+import Modal from "react-native-modal"
 import NavigationBar from '../../../theme/components/NavigationBar'
+
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
+const resetAction = NavigationActions.reset({
+    index: 0,
+    actions: [NavigationActions.navigate({ routeName: "Login" })],
+});
 export default class Personal extends React.Component {
     constructor(props) {
         super(props)
@@ -33,7 +38,7 @@ export default class Personal extends React.Component {
                                     <Text style={{ color: '#000000' }}>manhelnino97@gmail.com</Text>
                                 </View>
                             </View>
-                            <TouchableOpacity onPress={()=>this.props.navigation.navigate('Profile')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
                                 <Text style={{ color: '#ebaa34', fontSize: 16, marginTop: 10 }}>Sửa đổi</Text>
                             </TouchableOpacity>
                         </View>
@@ -88,7 +93,7 @@ export default class Personal extends React.Component {
                             </View>
                         </TouchableOpacity>
                         <View style={styles.grayline} />
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.dispatch(resetAction)}>
                             <View style={{ width: deviceWidth, alignItems: 'center', justifyContent: 'center', padding: 15 }}>
                                 <Text style={{ color: 'red' }}>ĐĂNG XUẤT</Text>
                             </View>

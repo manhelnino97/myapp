@@ -8,11 +8,13 @@ import clock from '../../../../assets/Register/clock.png';
 import facebook from '../../../../assets/Register/facebook.png';
 import google from '../../../../assets/Register/google.png';
 import material from '../../../theme/variables/material';
+import veviet from '../../../../assets/veviet.png';
 import styles from './styles';
 export default class Register extends Component {
     render() {
-        return (React.createElement(ScrollView, null,
-            React.createElement(View, { style: { alignItems: 'center', height: material.deviceHeight / 4 } }),
+        return (React.createElement(ScrollView, { style: { backgroundColor: '#FFFFFF' } },
+            React.createElement(View, { style: { alignItems: 'center', justifyContent: "center", height: material.deviceHeight / 4 } },
+                React.createElement(Image, { source: veviet, style: { width: 100, height: 100 } })),
             React.createElement(View, { style: styles.viewEdit },
                 React.createElement(View, { style: { width: 20, alignItems: 'center' } },
                     React.createElement(Image, { source: user })),

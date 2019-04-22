@@ -71,7 +71,7 @@ export default class BusTwoFloorTicket extends Component {
             <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Thành Phố : </Text>
             <View style={{ width: deviceWidth * 0.75, alignItems: 'center' }}>
               <ModalDropdown
-                options={['Hà Nội']}
+                options={['Hà Nội', 'Thành phố HCM', 'Hải Phòng', 'Đà Nẵng', 'Cần Thơ']}
                 defaultValue='Chọn thành phố'
                 style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#f0f0f0', paddingStart: 10, paddingEnd: 10, height: 35 }}
                 textStyle={{ fontSize: 15, textAlign: 'left', textAlignVertical: 'center', color: '#000000' }}
@@ -86,7 +86,7 @@ export default class BusTwoFloorTicket extends Component {
             <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Tuyến : </Text>
             <View style={{ width: deviceWidth * 0.75, alignItems: 'center' }}>
               <ModalDropdown
-                options={["Thăng Long - Hà Nội City Tour"]}
+                options={["Thăng Long - Hà Nội City Tour", "Thăng Long - Hà Nội City Tour", "Thăng Long - Hà Nội City Tour", "Thăng Long - Hà Nội City Tour", "Thăng Long - Hà Nội City Tour"]}
                 defaultValue='Chọn tuyến'
                 style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#f0f0f0', paddingStart: 10, paddingEnd: 10, height: 35 }}
                 textStyle={{ fontSize: 15, textAlign: 'left', textAlignVertical: 'center', color: '#000000' }}
@@ -108,7 +108,7 @@ export default class BusTwoFloorTicket extends Component {
             <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Độ tuổi : </Text>
             <View style={{ width: deviceWidth * 0.75, alignItems: 'center' }}>
               <ModalDropdown
-                options={["Từ 6 đến 11 tuổi", "Trên 11 tuổi"]}
+                options={["Dưới 6 tuổi", "Từ 6 đến 11 tuổi", "Trên 11 tuổi", "Trên 16 tuổi", "Trên 18 tuổi"]}
                 defaultValue='Chọn độ tuổi'
                 style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#f0f0f0', paddingStart: 10, paddingEnd: 10, height: 35 }}
                 textStyle={{ fontSize: 15, textAlign: 'left', textAlignVertical: 'center', color: '#000000' }}
@@ -123,7 +123,7 @@ export default class BusTwoFloorTicket extends Component {
             <Text style={{ width: deviceWidth * 0.25, color: '#000000', marginStart: 20 }} >Loại vé : </Text>
             <View style={{ width: deviceWidth * 0.75, alignItems: 'center' }}>
               <ModalDropdown
-                options={["4 giờ", "24 giờ", "48 giờ"]}
+                options={["1 giờ", "4 giờ", "24 giờ", "48 giờ", "64 giờ"]}
                 defaultValue='Chọn loại vé'
                 style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#f0f0f0', paddingStart: 10, paddingEnd: 10, height: 35 }}
                 textStyle={{ fontSize: 15, textAlign: 'left', textAlignVertical: 'center', color: '#000000' }}
@@ -187,7 +187,7 @@ export default class BusTwoFloorTicket extends Component {
             <View style={styles.grayline} />
           </RadioButton.Group>
 
-          <Text style={{marginStart:15, marignEnd:10}}>Sau khi thanh toán thành công, bạn sẽ nhận được một email có vé chứa tất cả thông tin bạn cần!</Text>
+          <Text style={{ marginStart: 15, marignEnd: 10, marginTop: 10, marginBottom: 10 }}>Sau khi thanh toán thành công, bạn sẽ nhận được một email có vé chứa tất cả thông tin bạn cần!</Text>
           <TouchableOpacity>
             <View style={{ height: 45, backgroundColor: '#ebaa34', alignItems: 'center', justifyContent: 'center' }}>
               <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>ĐẶT VÉ</Text>

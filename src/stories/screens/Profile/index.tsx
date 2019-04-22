@@ -2,14 +2,16 @@ import React, { Component } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView, StatusBar, Dimensions } from 'react-native'
 import { Switch } from 'native-base';
 
+
 import user from '../../../../assets/Profile/userlogin.png'
 import iconedit from '../../../../assets/Profile/iconedit.png'
 import iconfoward from '../../../../assets/Profile/iconfoward.png'
 import Modal from "react-native-modal";
-
 import NavigationBar from '../../../theme/components/NavigationBar'
+
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
+
 export default class Profile extends React.Component {
     constructor(props) {
         super(props)

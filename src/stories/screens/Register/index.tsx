@@ -10,14 +10,15 @@ import location from '../../../../assets/Register/location.png'
 import facebook from '../../../../assets/Register/facebook.png'
 import google from '../../../../assets/Register/google.png'
 import material from '../../../theme/variables/material';
+import veviet from '../../../../assets/veviet.png'
 import styles from './styles'
 export default class Register extends Component {
 
     render() {
         return (
-            <ScrollView>
-                <View style={{ alignItems: 'center', height: material.deviceHeight / 4 }} >
-                    {/* <Image source={logo} style={{ marginTop: 30, marginBottom: 30 }} /> */}
+            <ScrollView style={{ backgroundColor: '#FFFFFF' }}>
+                <View style={{ alignItems: 'center', justifyContent: "center", height: material.deviceHeight / 4 }} >
+                    <Image source={veviet} style={{ width: 100, height: 100 }} />
                 </View>
 
                 <View style={styles.viewEdit}>
