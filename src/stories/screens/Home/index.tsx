@@ -47,7 +47,7 @@ class Home extends React.Component<Props, State> {
 
   render() {
     const data = [
-      { id: '1', type: 'navigation', name: 'Vé xe buýt 2 tầng', url: 'BusTwoFloorTicket', icon: bus },
+      { id: '1', type: 'navigation', name: 'Vé xe buýt 2 tầng', url: 'BusTwoFloorTicketDetail', icon: bus },
       { id: '2', type: 'webview', name: 'Vé xe khách ', url: 'https://vexere.com/', icon: ticket },
       { id: '3', type: 'webview', name: 'Vé máy bay', url: 'https://www.gotadi.com/', icon: plane },
       { id: '3', type: 'webview', name: 'Vé tàu hỏa', url: 'http://vetaugiare24h.com/', icon: bus },

@@ -26,7 +26,6 @@ export default class BusTwoFloorTicket extends Component {
             React.createElement(ScrollView, { style: { marginTop: 50 } },
                 React.createElement(View, { style: { flexDirection: 'row', height: deviceHeight / 4 } },
                     React.createElement(FlatList, { data: [1], renderItem: this.renderItem, horizontal: true })),
-                React.createElement(View, { style: { height: 30, backgroundColor: '#d0d0d0' } }),
                 React.createElement(View, { style: { height: 50, flexDirection: 'row', alignItems: 'center' } },
                     React.createElement(Text, { style: { color: '#000000', marginStart: 20 } },
                         "H\u1ECD v\u00E0 T\u00EAn ",

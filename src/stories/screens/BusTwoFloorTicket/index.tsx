@@ -42,7 +42,7 @@ export default class BusTwoFloorTicket extends Component {
             />
           </View>
 
-          <View style={{ height: 30, backgroundColor: '#d0d0d0' }}></View>
+          {/* <View style={{ height: 30, backgroundColor: '#d0d0d0' }}></View> */}
 
           <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
             <Text style={{ color: '#000000', marginStart: 20 }} >Họ và Tên <Text style={{ color: 'red' }}>*</Text>:</Text>
