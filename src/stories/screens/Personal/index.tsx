@@ -45,7 +45,7 @@ export default class Personal extends React.Component {
                         <View style={styles.grayline} />
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 15 }}>
                             <Text style={{ color: '#000000', fontSize: 16 }}>Số dư khả dụng:  69.000 đ</Text>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('Recharge')}>
                                 <Text style={{ color: '#ebaa34', fontSize: 16 }}>Nạp tiền</Text>
                             </TouchableOpacity>
                         </View>

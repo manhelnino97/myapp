@@ -48,7 +48,7 @@ const App = StackNavigator(
 		Promotion: {screen: Promotion},
 	},
 	{
-		initialRouteName: "BusTwoFloorTicketDetail",
+		initialRouteName: "Home",
 		headerMode: "none",
 	}
 );
