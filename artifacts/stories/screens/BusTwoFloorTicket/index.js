@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dimensions, StyleSheet, Text, View, Image, FlatList, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { Dimensions, StyleSheet, Text, View, Image, FlatList, TouchableOpacity, TextInput, ScrollView, Alert } from 'react-native';
 import ModalDropdown from 'react-native-modal-dropdown';
 import { RadioButton } from 'react-native-paper';
 const deviceHeight = Dimensions.get("window").height;
@@ -91,7 +91,12 @@ export default class BusTwoFloorTicket extends Component {
                         React.createElement(Image, { source: atm })),
                     React.createElement(View, { style: styles.grayline })),
                 React.createElement(Text, { style: { marginStart: 15, marignEnd: 10, marginTop: 10, marginBottom: 10 } }, "Sau khi thanh to\u00E1n th\u00E0nh c\u00F4ng, b\u1EA1n s\u1EBD nh\u1EADn \u0111\u01B0\u1EE3c m\u1ED9t email c\u00F3 v\u00E9 ch\u1EE9a t\u1EA5t c\u1EA3 th\u00F4ng tin b\u1EA1n c\u1EA7n!"),
-                React.createElement(TouchableOpacity, null,
+                React.createElement(TouchableOpacity, { onPress: () => {
+                        setTimeout(() => {
+                            Alert.alert("Thông báo", "Đặt vé thành công!");
+                            this.props.navigation.navigate('Home');
+                        }, 2000);
+                    } },
                     React.createElement(View, { style: { height: 45, backgroundColor: '#ebaa34', alignItems: 'center', justifyContent: 'center' } },
                         React.createElement(Text, { style: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 } }, "\u0110\u1EB6T V\u00C9")))),
             React.createElement(View, { style: { position: 'absolute', width: deviceWidth, height: 50, backgroundColor: '#000000' } },

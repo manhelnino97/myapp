@@ -38,8 +38,8 @@ export default class Login extends Component {
         try {
             await GoogleSignin.hasPlayServices()
                 .then(() => GoogleSignin.signIn()
-                    .then((userInfo) => alert(JSON.stringify(userInfo.user)))
-                    .catch(e => console.log('error: ' + e)))
+                    .then((userInfor) => alert(JSON.stringify(userInfor)))
+                    .catch(e => alert(e)))
                 .catch(e => alert(e));
         } catch (error) {
             alert('ERROR GETTING DATA FROM GOOGLE')

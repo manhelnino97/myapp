@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Dimensions, StyleSheet, Text, View, Image, FlatList, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { Dimensions, StyleSheet, Text, View, Image, FlatList, TouchableOpacity, TextInput, ScrollView, Alert } from 'react-native';
 import ModalDropdown from 'react-native-modal-dropdown'
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import { RadioButton } from 'react-native-paper';
@@ -188,7 +188,13 @@ export default class BusTwoFloorTicket extends Component {
           </RadioButton.Group>
 
           <Text style={{ marginStart: 15, marignEnd: 10, marginTop: 10, marginBottom: 10 }}>Sau khi thanh toán thành công, bạn sẽ nhận được một email có vé chứa tất cả thông tin bạn cần!</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            setTimeout(() => {
+              Alert.alert("Thông báo", "Đặt vé thành công!")
+              this.props.navigation.navigate('Home')
+            }, 2000);
+
+          }}>
             <View style={{ height: 45, backgroundColor: '#ebaa34', alignItems: 'center', justifyContent: 'center' }}>
               <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>ĐẶT VÉ</Text>
             </View>

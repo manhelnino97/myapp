@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView, StatusBar, Dimensions } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView, Alert, Dimensions } from 'react-native'
 import { Switch } from 'native-base';
 
 
@@ -52,7 +52,10 @@ export default class Profile extends React.Component {
                         <Text style={styles.textTittle}>Địa chỉ</Text>
                         {this.props.textInputAddress}
                         <View style={styles.grayline} />
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{
+                            Alert.alert("Thông báo", "Lưu thành công!")
+                            this.props.navigation.navigate('Home')
+                        }}>
                             <View style={{ width: deviceWidth, alignItems: 'center', justifyContent: 'center', padding: 15 }}>
                                 <Text style={{ color: '#ebaa34' }}>LƯU THAY ĐỔI</Text>
                             </View>

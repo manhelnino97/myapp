@@ -38,7 +38,7 @@ const App = StackNavigator({
     Recharge: { screen: Recharge },
     Promotion: { screen: Promotion },
 }, {
-    initialRouteName: "Home",
+    initialRouteName: "Login",
     headerMode: "none",
 });
 export default () => (React.createElement(Root, null,
