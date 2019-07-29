@@ -19,7 +19,7 @@ export default class NavigationBar extends React.Component {
                 </View>
 
                 <View style={{ width: width * 2 / 3, height: 50, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text style={{ color: '#FFFFFF', fontSize: 18 }}>{this.props.title}</Text>
+                    <Text style={{ color: '#FFFFFF', fontSize: 18 }} ellipsizeMode='tail' numberOfLines={1}>{this.props.title}</Text>
                 </View>
 
                 <View style={{ width: width / 6, height: 50 }}>

@@ -6,11 +6,11 @@ import facebook from '../../../../assets/Register/facebook.png'
 import google from '../../../../assets/Register/google.png'
 import email from '../../../../assets/Register/email.png'
 import clock from '../../../../assets/Register/clock.png'
-
+import veviet from '../../../../assets/veviet.png'
 import material from '../../../theme/variables/material';
 GoogleSignin.configure();
 export default class Login extends Component {
-    
+
     async loginFB() {
         await LoginManager.logInWithReadPermissions(['public_profile', 'email']).then(function (result) {
             if (result.isCancelled) {
@@ -38,8 +38,8 @@ export default class Login extends Component {
         try {
             await GoogleSignin.hasPlayServices()
                 .then(() => GoogleSignin.signIn()
-                    .then((userInfo) => alert(JSON.stringify(userInfo.user)))
-                    .catch(e => console.log('error: ' + e)))
+                    .then((userInfor) => alert(JSON.stringify(userInfor)))
+                    .catch(e => alert(e)))
                 .catch(e => alert(e));
         } catch (error) {
             alert('ERROR GETTING DATA FROM GOOGLE')
@@ -49,11 +49,11 @@ export default class Login extends Component {
 
     render() {
         return (
-            <View style={{}}>
+            <View style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
                 <View style={{ height: material.deviceHeight / 2 }}>
 
                     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-                        {/* <Image source={logo}/> */}
+                        <Image source={veviet} style={{ width: 100, height: 100 }} />
                     </View>
 
                     <View style={{ flex: 1, justifyContent: 'center', marginBottom: 30, marginTop: 10 }}>
@@ -115,8 +115,6 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
     viewEdit: {
         flexDirection: 'row',
-        borderBottomWidth: 1,
-        borderColor: '#ebebeb',
         alignItems: "center",
         paddingLeft: 16
     },

@@ -14,6 +14,7 @@ import facebook from '../../../../assets/Register/facebook.png';
 import google from '../../../../assets/Register/google.png';
 import email from '../../../../assets/Register/email.png';
 import clock from '../../../../assets/Register/clock.png';
+import veviet from '../../../../assets/veviet.png';
 import material from '../../../theme/variables/material';
 GoogleSignin.configure();
 export default class Login extends Component {
@@ -44,8 +45,8 @@ export default class Login extends Component {
             try {
                 yield GoogleSignin.hasPlayServices()
                     .then(() => GoogleSignin.signIn()
-                    .then((userInfo) => alert(JSON.stringify(userInfo.user)))
-                    .catch(e => console.log('error: ' + e)))
+                    .then((userInfor) => alert(JSON.stringify(userInfor)))
+                    .catch(e => alert(e)))
                     .catch(e => alert(e));
             }
             catch (error) {
@@ -55,9 +56,10 @@ export default class Login extends Component {
     }
     ;
     render() {
-        return (React.createElement(View, { style: {} },
+        return (React.createElement(View, { style: { flex: 1, backgroundColor: '#FFFFFF' } },
             React.createElement(View, { style: { height: material.deviceHeight / 2 } },
-                React.createElement(View, { style: { flex: 1, alignItems: "center", justifyContent: "center" } }),
+                React.createElement(View, { style: { flex: 1, alignItems: "center", justifyContent: "center" } },
+                    React.createElement(Image, { source: veviet, style: { width: 100, height: 100 } })),
                 React.createElement(View, { style: { flex: 1, justifyContent: 'center', marginBottom: 30, marginTop: 10 } },
                     React.createElement(View, { style: styles.viewEdit },
                         React.createElement(Image, { source: email }),
@@ -91,8 +93,6 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
     viewEdit: {
         flexDirection: 'row',
-        borderBottomWidth: 1,
-        borderColor: '#ebebeb',
         alignItems: "center",
         paddingLeft: 16
     },

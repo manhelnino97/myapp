@@ -19,6 +19,22 @@ class RegisterContainer extends React.Component {
             }
         });
     }
+    register(userName, password, fullName, phoneNumber) {
+        fetch('http://192.168.43.57:3003/api/signup', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: userName,
+                password: password,
+                fullname: fullName,
+                phone_number: phoneNumber,
+            })
+        }).then(response => {
+        }).catch(e => alert(e));
+    }
     render() {
         RNAccountKit.configure({
             responseType: 'token',

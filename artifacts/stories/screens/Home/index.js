@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, FlatList, Dimensions, TouchableOpacity, ScrollView, Image, Text } from 'react-native';
+import { View, FlatList, Dimensions, TouchableOpacity, ScrollView, Image, Text, ActivityIndicator } from 'react-native';
 import styles from "./styles";
 import logo from '../../../../assets/logo.png';
 import pay from '../../../../assets/home/pay.png';
@@ -8,15 +8,12 @@ import profile from '../../../../assets/home/profile.png';
 import bus from '../../../../assets/home/bus.png';
 import ticket from '../../../../assets/home/ticket.png';
 import plane from '../../../../assets/home/plane.png';
-import vcs from '../../../../assets/vcs.png';
-import sun from '../../../../assets/sun.png';
-import nhac from '../../../../assets/nhac.png';
-import saigon from '../../../../assets/saigon.png';
+import { API } from '../../../helper/Constants';
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
 class Home extends React.Component {
-    constructor() {
-        super(...arguments);
+    constructor(props) {
+        super(props);
         this.renderItem1 = ({ item }) => {
             return (React.createElement(TouchableOpacity, { style: { width: deviceWidth / 4, alignItems: 'center', marginTop: 10 }, onPress: () => {
                     item.type === 'navigation' ? this.props.navigation.navigate(item.url) : this.props.navigation.navigate('WebSite', { url: item.url, name: item.name });
@@ -25,24 +22,38 @@ class Home extends React.Component {
                 React.createElement(Text, { style: { fontSize: 13, color: '#ebaa34', marginTop: 5, textAlign: 'center', padding: 5 }, numberOfLines: 1, ellipsizeMode: 'tail' }, item.name)));
         };
         this.renderItem2 = ({ item }) => {
-            return (React.createElement(TouchableOpacity, { style: { marginStart: 10, marginBottom: 10 } },
-                React.createElement(Image, { source: item.image, style: { width: deviceWidth - 20, height: deviceHeight / 5 } })));
+            return (item.id < 5 ?
+                React.createElement(TouchableOpacity, { style: { marginStart: 10, marginBottom: 10 }, onPress: () => this.props.navigation.navigate('WebSite', { url: API + 'event/' + item.id, name: item.name }) },
+                    React.createElement(Image, { source: { uri: API + item.image }, style: { width: deviceWidth - 20, height: deviceHeight / 5 } }))
+                : null);
         };
+        this.state = {
+            load: true,
+            data: []
+        };
+    }
+    componentDidMount() {
+        fetch(API + 'api')
+            .then((response) => response.json())
+            .then((responseJson) => {
+            //alert(JSON.stringify(responseJson[0][0]))
+            this.setState({ data: responseJson[0] });
+            this.setState({ load: false });
+        })
+            .catch((error) => {
+            alert(error);
+        });
     }
     render() {
         const data = [
-            { id: '1', type: 'navigation', name: 'Vé xe buýt 2 tầng', url: 'BusTwoFloorTicket', icon: bus },
+            { id: '1', type: 'navigation', name: 'Vé xe buýt 2 tầng', url: 'BusTwoFloorTicketDetail', icon: bus },
             { id: '2', type: 'webview', name: 'Vé xe khách ', url: 'https://vexere.com/', icon: ticket },
             { id: '3', type: 'webview', name: 'Vé máy bay', url: 'https://www.gotadi.com/', icon: plane },
-            { id: '3', type: 'webview', name: 'Vé tàu hỏa', url: 'http://datve.vetaugiare24h.com/home2.php', icon: bus },
+            { id: '3', type: 'webview', name: 'Vé tàu hỏa', url: 'http://vetaugiare24h.com/', icon: bus },
         ];
-        const data1 = [
-            { id: '1', image: vcs },
-            { id: '2', image: nhac },
-            { id: '3', image: sun },
-            { id: '4', image: saigon },
-        ];
-        return (React.createElement(View, { style: { backgroundColor: '#FFFFFF' } },
+        return (React.createElement(View, { style: { flex: 1, backgroundColor: '#FFFFFF' } }, this.state.load ?
+            React.createElement(View, { style: { flex: 1, alignItems: 'center', justifyContent: 'center' } },
+                React.createElement(ActivityIndicator, { size: "large", color: '#ebaa34' })) :
             React.createElement(ScrollView, null,
                 React.createElement(View, { style: { paddingBottom: 10 } },
                     React.createElement(Image, { source: logo, style: { width: deviceWidth, height: deviceHeight / 5 } }),
@@ -72,7 +83,7 @@ class Home extends React.Component {
                             React.createElement(Text, { style: { fontSize: 13, color: '#85563a', marginEnd: 10 } },
                                 "Xem t\u1EA5t c\u1EA3 s\u1EF1 ki\u1EC7n  ",
                                 React.createElement(Text, { style: { fontSize: 16 } }, ">")))),
-                    React.createElement(FlatList, { data: data1, renderItem: this.renderItem2 })))));
+                    React.createElement(FlatList, { data: this.state.data, renderItem: this.renderItem2 })))));
     }
 }
 export default Home;

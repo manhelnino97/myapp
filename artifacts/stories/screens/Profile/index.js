@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView, Dimensions } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View, ScrollView, Alert, Dimensions } from 'react-native';
 import user from '../../../../assets/Profile/userlogin.png';
 import NavigationBar from '../../../theme/components/NavigationBar';
 const deviceHeight = Dimensions.get("window").height;
@@ -36,7 +36,10 @@ export default class Profile extends React.Component {
                     React.createElement(Text, { style: styles.textTittle }, "\u0110\u1ECBa ch\u1EC9"),
                     this.props.textInputAddress,
                     React.createElement(View, { style: styles.grayline }),
-                    React.createElement(TouchableOpacity, null,
+                    React.createElement(TouchableOpacity, { onPress: () => {
+                            Alert.alert("Thông báo", "Lưu thành công!");
+                            this.props.navigation.navigate('Home');
+                        } },
                         React.createElement(View, { style: { width: deviceWidth, alignItems: 'center', justifyContent: 'center', padding: 15 } },
                             React.createElement(Text, { style: { color: '#ebaa34' } }, "L\u01AFU THAY \u0110\u1ED4I"))))),
             React.createElement(View, { style: { position: 'absolute', width: deviceWidth, height: 50, backgroundColor: '#000000' } },
