@@ -81,6 +81,6 @@
     "remote-redux-devtools": "0.5.0",
     "remote-redux-devtools-on-debugger": "^0.8.0",
     "rn-fetch-blob": "^0.10.15",
-    "yarn": "^1.13.0"
+    "yarn": "^1.22.0"
   }
 }
