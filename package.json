@@ -22,11 +22,11 @@
     "eslint-plugin-react-native": "3.1.0",
     "husky": "0.14.3",
     "husky-hg": "^0.15.3",
-    "jest-expo": "^24.0.0",
+    "jest-expo": "^47.0.1",
     "lint-staged": "7.0.5",
     "react-test-renderer": "16.2.0",
     "rimraf": "^2.6.2",
-    "ts-jest": "22.0.0",
+    "ts-jest": "29.0.3",
     "tslint": "^5.8.0",
     "typescript": "2.6.2"
   },
